@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 795216414922481971, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
   minMaxWaitTime: {x: 0.1, y: 0.2}
+  minMaxScale: {x: 0.5, y: 2}
   spawnRadius: 1
   maxBubbles: 1000
   currentCount: 0
