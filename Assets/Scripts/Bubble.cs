@@ -5,9 +5,11 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private float _stickyStrength;
+    //[SerializeField] private float _stickyStrength;
+    
+    [field: SerializeField] public Collider2D Collider { get; private set; }
 
-    private List<GameObject> _otherBubbles = new List<GameObject>();
+    private List<Bubble> _otherBubbles = new();// List<GameObject>();
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,12 +18,15 @@ public class Bubble : MonoBehaviour
             return;
         }
 
-        _otherBubbles.Add(other.gameObject);
+        var otherBubble = other.GetComponent<Bubble>();
+        
+        if (otherBubble)
+            _otherBubbles.Add(otherBubble);//.gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        _otherBubbles.Remove(other.gameObject);
+        _otherBubbles.Remove(other.GetComponent<Bubble>());//.gameObject);
     }
 
     private void FixedUpdate()
@@ -33,8 +38,37 @@ public class Bubble : MonoBehaviour
         
         foreach(var bubble in _otherBubbles)
         {
+            var _stickyStrength = GetStickyStrength();
             Vector3 direction = (bubble.transform.position - transform.position).normalized;
-            _rigidbody.AddForce(direction * _stickyStrength);
+            float sizeMultiplier = GetSizeMultiplier(bubble);
+            float distanceMultiplier = GetDistanceMultiplier(bubble);
+            
+            if (_rigidbody)
+                _rigidbody.AddForce(direction * (_stickyStrength * sizeMultiplier * distanceMultiplier));
+        }
+
+        float GetStickyStrength()
+        {
+            if (BubblesManager.Instance)
+                return BubblesManager.Instance.StickyStrength;
+            else
+                return 1;
+        }
+        
+        float GetSizeMultiplier(Bubble bubble)
+        {
+            if (BubblesManager.Instance && BubblesManager.Instance.UseSizeInCalculations)    
+                return bubble.Collider.bounds.size.magnitude * BubblesManager.Instance.SizeFactor;//GetNonTriggerCollider(bubble).bounds.size.magnitude;
+            else
+                return 1;
+        }
+
+        float GetDistanceMultiplier(Bubble bubble)
+        {
+            if (BubblesManager.Instance && BubblesManager.Instance.UseDistanceInCalculations)
+                return BubblesManager.Instance.DistanceFactor / Vector2.Distance(bubble.transform.position, transform.position);
+            else
+                return 1;
         }
     }
 }
