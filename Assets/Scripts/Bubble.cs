@@ -79,7 +79,7 @@ public class Bubble : MonoBehaviour
             float distanceMultiplier = GetDistanceMultiplier(bubble);
             
             if (_rigidbody)
-                _rigidbody.AddForce(direction * (_stickyStrength * sizeMultiplier * distanceMultiplier));
+                _rigidbody.AddForce(direction * Math.Clamp(_stickyStrength * sizeMultiplier * distanceMultiplier, 0, 1));
         }
 
         float GetStickyStrength()
