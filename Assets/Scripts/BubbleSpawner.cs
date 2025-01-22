@@ -11,19 +11,29 @@ public class BubbleSpawner : MonoBehaviour
     [SerializeField] private int maxBubbles = 10000;
     [Header("Monitoring")]
     [SerializeField] private int currentCount;
+    [SerializeField] private bool _spawningActive = true;
     
+    private const float SPAWN_TOGGLE_POLLING_TIME = 0.01f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(SpawnBubblesCoroutine());
     }
-
+    
+    public void SetSpawningActive(bool active) => _spawningActive = active;
+    
     IEnumerator SpawnBubblesCoroutine()
     {
         currentCount = 0;
         
         do
         {
+            if (!_spawningActive)
+            {
+                yield return new WaitForSeconds(SPAWN_TOGGLE_POLLING_TIME);
+                continue;
+            }
+            
             SpawnBubble();
             currentCount++;
             var waitTime = Random.Range(minMaxWaitTime.x, minMaxWaitTime.y);

@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private bool _isPlayer = false;
+    [SerializeField] private float _popTime = 0.1f;
     
     [field: SerializeField] public Collider2D Collider { get; private set; }
-   
-
+    
     private List<Bubble> _otherBubbles = new();
-
+    
+    private bool _isPopped = false;
+    
     private void Start()
     {
         if (!_isPlayer && BubblesManager.Instance && BubblesManager.Instance.UseDestroyAfterTime)
@@ -30,7 +33,7 @@ public class Bubble : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer != LayerMask.NameToLayer("Bubble"))
+        if (_isPopped || other.gameObject.layer != LayerMask.NameToLayer("Bubble"))
         {
             return;
         }
@@ -57,6 +60,11 @@ public class Bubble : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (_isPopped)
+        {
+            return;
+        }
+        
         _otherBubbles.Remove(other.GetComponent<Bubble>());
         if(_rigidbody)
         {
@@ -105,5 +113,38 @@ public class Bubble : MonoBehaviour
             else
                 return 1;
         }
+    }
+
+    public void PopBondedBubbles()
+    {
+        if(_otherBubbles.Count == 0)
+        {
+            return;
+        }
+        
+        foreach (var bubble in _otherBubbles)
+        {
+            bubble.PopBubble();
+        }
+    }
+
+    public void PopBubble()
+    {
+        StartCoroutine(PopBubbleCoroutine());
+    }
+
+    private IEnumerator PopBubbleCoroutine()
+    {
+        // todo - trigger cute pop animation or something
+        _otherBubbles.Clear();
+        float time = 0f;
+        Color originalColor = _spriteRenderer.color;
+        while (time < _popTime)
+        {
+            time += Time.deltaTime;
+            _spriteRenderer.color = Color.Lerp(originalColor, Color.clear, time / _popTime);
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 }
