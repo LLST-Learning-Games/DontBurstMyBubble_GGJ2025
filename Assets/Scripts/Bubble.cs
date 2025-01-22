@@ -1,15 +1,32 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody;
-    //[SerializeField] private float _stickyStrength;
+    [SerializeField] private bool _isPlayer = false;
     
     [field: SerializeField] public Collider2D Collider { get; private set; }
+   
 
-    private List<Bubble> _otherBubbles = new();// List<GameObject>();
+    private List<Bubble> _otherBubbles = new();
+
+    private void Start()
+    {
+        if (!_isPlayer && BubblesManager.Instance && BubblesManager.Instance.UseDestroyAfterTime)
+        {
+            StartCoroutine(DestroyAfterSeconds());
+        }
+    }
+
+    // Temporary cleanup operation while we play with spawning
+    private IEnumerator DestroyAfterSeconds()
+    {
+        yield return new WaitForSeconds(BubblesManager.Instance.DestroyAfterTime);
+        Destroy(gameObject);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,14 +36,32 @@ public class Bubble : MonoBehaviour
         }
 
         var otherBubble = other.GetComponent<Bubble>();
-        
+
         if (otherBubble)
-            _otherBubbles.Add(otherBubble);//.gameObject);
+        {
+            _otherBubbles.Add(otherBubble);
+            if (_rigidbody)
+            {
+                _rigidbody.gravityScale += GetGravityDelta();
+            }
+        }
+    }
+    
+    private float GetGravityDelta()
+    {
+        if (BubblesManager.Instance)
+            return BubblesManager.Instance.ClusterGravityDelta;
+        else
+            return -0.05f;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        _otherBubbles.Remove(other.GetComponent<Bubble>());//.gameObject);
+        _otherBubbles.Remove(other.GetComponent<Bubble>());
+        if(_rigidbody)
+        {
+            _rigidbody.gravityScale -= GetGravityDelta();
+        }
     }
 
     private void FixedUpdate()

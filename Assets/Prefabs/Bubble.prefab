@@ -88,7 +88,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 2439172162456581026}
-  _stickyStrength: 1
   <Collider>k__BackingField: {fileID: 1032627565988397796}
 --- !u!58 &1032627565988397796
 CircleCollider2D:
