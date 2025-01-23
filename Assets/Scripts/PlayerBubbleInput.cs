@@ -6,11 +6,13 @@ namespace DefaultNamespace
     {
         [SerializeField] private Bubble _playerBubble;
         [SerializeField] private BubbleSpawner _playerBubbleSpawner;
+        [SerializeField] private float inflateSpeed = 2f;
         
         void Update()
         {
             HandleBubblePopInput();
             HandleBubbleSpawnerInput();
+            HandleInflateDeflate();
         }
 
         private void HandleBubblePopInput()
@@ -41,6 +43,24 @@ namespace DefaultNamespace
             if (Input.GetKeyUp(KeyCode.Space))
             {
                 _playerBubbleSpawner.SetSpawningActive(false);
+            }
+        }
+
+        void HandleInflateDeflate()
+        {
+            if (!_playerBubbleSpawner)
+            {
+                return;
+            }
+            
+            if (Input.GetKey(KeyCode.C))
+            {
+                _playerBubble.Scale(inflateSpeed * Time.deltaTime);//.transform.localScale += Vector3.one * (inflateSpeed * Time.deltaTime);
+            }
+            
+            if (Input.GetKey(KeyCode.Z))
+            {
+                _playerBubble.Scale(-inflateSpeed * Time.deltaTime);//.transform.localScale -= Vector3.one * (inflateSpeed * Time.deltaTime);
             }
         }
     }

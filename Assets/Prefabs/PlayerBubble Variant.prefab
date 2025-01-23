@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4209964395061156675, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5217711319184765185, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_Color.b
       value: 0.78656

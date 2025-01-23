@@ -22,6 +22,8 @@ public class Bubble : MonoBehaviour
         {
             StartCoroutine(DestroyAfterSeconds());
         }
+
+        _rigidbody.gravityScale = CalculateGravityScale(gameObject.transform.lossyScale.magnitude);
     }
 
     // Temporary cleanup operation while we play with spawning
@@ -146,5 +148,33 @@ public class Bubble : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
+    }
+
+    public void Scale(float scaleDelta)
+    {
+        gameObject.transform.localScale += new Vector3(scaleDelta, scaleDelta);
+        
+        float scaleSign = Mathf.Sign(gameObject.transform.lossyScale.x);
+        float preservedScaleMagnitude = gameObject.transform.lossyScale.magnitude * scaleSign;
+
+        _rigidbody.gravityScale = CalculateGravityScale(preservedScaleMagnitude);
+        
+        _spriteRenderer.gameObject.SetActive(scaleSign > 0);
+    }
+
+    private float CalculateGravityScale(float sizeScale)
+    {
+        return GetGravityDelta() * DiameterToVolume(sizeScale) + GetGravityEffectOfOtherBubbles();
+    }
+        
+    
+    float DiameterToVolume(float diameter)
+    {
+        return (float)(Math.PI * Math.Pow(diameter, 3) / 6);
+    }
+
+    float GetGravityEffectOfOtherBubbles()
+    {
+        return GetGravityDelta() * _otherBubbles.Count;
     }
 }

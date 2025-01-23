@@ -10,6 +10,9 @@ public class SuctionZone : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
+        if (other.isTrigger) // we don't want to run on trigger zones.
+            return;
+        
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb == null) return; // Only affect objects with Rigidbody2D
 

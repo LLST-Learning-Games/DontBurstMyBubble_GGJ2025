@@ -78,3 +78,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerBubble: {fileID: 0}
   _playerBubbleSpawner: {fileID: 0}
+  inflateSpeed: 2

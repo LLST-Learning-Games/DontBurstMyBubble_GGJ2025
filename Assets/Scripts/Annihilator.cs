@@ -18,6 +18,9 @@ public class Annihilator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.isTrigger)
+            return;
+        
         if (shrinkingObjects.Contains(other.gameObject))
             return;
         
