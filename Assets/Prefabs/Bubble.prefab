@@ -89,7 +89,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.2
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -167,13 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 1032627565988397796}
-  radius: 0.01
-  fluidDensity: 1000
-  gasDensity: 1.225
-  wakeInfluence: 0.2
-  swarmFactor: 0.05
-  riseSpeedFactor: 1.5
   bubbleCount: 0
+  volume: 0
+  baseBuoyantForce: 0
 --- !u!1 &4209964395061156675
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class BubbleBuoyancy : MonoBehaviour
         if (!rb)
             rb = GetComponent<Rigidbody2D>();
         
-        rb.gravityScale = 0;
+        //rb.gravityScale = 0;
 
         if (ScaledPhysicsRadius > 0)
         {
