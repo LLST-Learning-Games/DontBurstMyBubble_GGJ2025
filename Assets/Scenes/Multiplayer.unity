@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db79f3f7710e0b4083c39b85e88386b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePrefab: {fileID: 795216414922481971, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
+  bubblePrefab: {fileID: 6931511137424090223, guid: 0947734bb8c7e26438e4151db77d16bb, type: 3}
   minMaxWaitTime: {x: 0.1, y: 0.2}
   minMaxScale: {x: 0.5, y: 2}
   spawnRadius: 1
@@ -470,6 +470,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _isPlayer: 1
   _popTime: 0.1
+  attractedToOtherBubbles: 1
   <Collider>k__BackingField: {fileID: 563709135}
 --- !u!61 &563709135
 BoxCollider2D:
@@ -897,6 +898,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a3058eeee6b64abe53d1e156c4531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buoyancySimulationMethod: 0
+  physicsBaseRadius: 0.01
+  fluidDensity: 1000
+  gasDensity: 1.225
+  wakeInfluence: 0.2
+  swarmFactor: 0.05
+  riseSpeedFactor: 1.5
+  dummyHeaderSpacer: 0
   <StickyStrength>k__BackingField: 1
   <UseSizeInCalculations>k__BackingField: 0
   <SizeFactor>k__BackingField: 2
@@ -1192,6 +1201,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _isPlayer: 1
   _popTime: 0.1
+  attractedToOtherBubbles: 1
   <Collider>k__BackingField: {fileID: 1759132937}
 --- !u!1001 &3242922044500688954
 PrefabInstance:

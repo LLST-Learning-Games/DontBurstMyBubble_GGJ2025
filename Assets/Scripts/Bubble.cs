@@ -9,6 +9,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private bool _isPlayer = false;
     [SerializeField] private float _popTime = 0.1f;
+    [SerializeField] private bool attractedToOtherBubbles = true;
     
     [field: SerializeField] public Collider2D Collider { get; private set; }
     
@@ -79,7 +80,7 @@ public class Bubble : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_otherBubbles.Count == 0)
+        if (_otherBubbles.Count == 0 || !attractedToOtherBubbles)
         {
             return;
         }
