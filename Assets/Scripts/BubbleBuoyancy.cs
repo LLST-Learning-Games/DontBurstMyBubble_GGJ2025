@@ -6,18 +6,10 @@ public class BubbleBuoyancy : MonoBehaviour
 {
     [SerializeField] private CircleCollider2D collider;
     
-    public float physicsBaseRadius = 0.01f;  // Bubble radius in meters. This is used for Physics calculations, separate from display calculations!
-    public float fluidDensity = 1000f;  // Density of water (kg/m³)
-    public float gasDensity = 1.225f;  // Density of air (kg/m³)
-    public float wakeInfluence = 0.2f; // Multiplier for wake acceleration
-    public float swarmFactor = 0.05f;  // Gas fraction in swarm
-    public float riseSpeedFactor = 1.5f; // Speed boost from swarm
-    
-    [Header("Monitoring")]
-    
-    [SerializeField] int bubbleCount = 0;
-    
     private Rigidbody2D rb;
+
+    [Header("Monitoring")] 
+    [SerializeField] private int bubbleCount;
     [SerializeField] private float volume;
     [SerializeField] private float baseBuoyantForce;
 
@@ -29,47 +21,26 @@ public class BubbleBuoyancy : MonoBehaviour
         Initialize();
     }
 
-
-    [SerializeField] float scaledPhysicsRadius;
-    [SerializeField] private float displayRadius;
-    float ScaledPhysicsRadius
-    {
-        get
-        {
-            scaledPhysicsRadius = physicsBaseRadius * transform.localScale.x;
-            return scaledPhysicsRadius;
-        }
-    }
-
-    float DisplayRadius
-    {
-        get
-        {
-            displayRadius = transform.localScale.x * collider.radius;
-            return displayRadius;
-        }
-    }
+    float ScaledPhysicsRadius => BubblesManager.Instance.physicsBaseRadius * transform.localScale.x;
+    float DisplayRadius => transform.localScale.x * collider.radius;
     
     public void Initialize()
     {
-        //baseRadius *= gameObject.transform.lossyScale.x;
         if (!rb)
             rb = GetComponent<Rigidbody2D>();
         
-        rb.gravityScale = 0;//.useGravity = false;
+        rb.gravityScale = 0;
 
         if (ScaledPhysicsRadius > 0)
         {
             // Compute base buoyancy using Archimedes' principle
             volume = (4f / 3f) * Mathf.PI * Mathf.Pow(ScaledPhysicsRadius, 3);
-            baseBuoyantForce = (fluidDensity - gasDensity) * volume * Physics.gravity.magnitude;
-            //Debug.Log(baseBuoyantForce);
+            baseBuoyantForce = (BubblesManager.Instance.fluidDensity - BubblesManager.Instance.gasDensity) * volume * Physics.gravity.magnitude;
         }
         else
         {
             volume = -((4f / 3f) * Mathf.PI * Mathf.Pow(-ScaledPhysicsRadius, 3));
-            baseBuoyantForce = (fluidDensity - gasDensity) * volume * Physics.gravity.magnitude;
-            //Debug.Log("Does this run?");
+            baseBuoyantForce = (BubblesManager.Instance.fluidDensity - BubblesManager.Instance.gasDensity) * volume * Physics.gravity.magnitude;
         }
     }
 
@@ -89,24 +60,21 @@ public class BubbleBuoyancy : MonoBehaviour
 
     void ApplySwarmEffects()
     {
-        Collider2D[] nearbyBubbles = Physics2D.OverlapCircleAll(transform.position, DisplayRadius * 3); // THIS IS NOT WORKING. radius doesn't correlate to in-game distances. Even when I set it huge, it doesn't find anything.
+        Collider2D[] nearbyBubbles = Physics2D.OverlapCircleAll(transform.position, DisplayRadius * 3);
         bubbleCount = 0;
 
         foreach (Collider2D col in nearbyBubbles)
         {
-            //Debug.Log("This is running");
             if (col.gameObject != gameObject && col.CompareTag("Bubble"))
             {
                 bubbleCount++;
                 Vector3 toOther = (col.transform.position - transform.position).normalized;
-                rb.AddForce(toOther * wakeInfluence * baseBuoyantForce, ForceMode2D.Force);
-                //Debug.Log(bubbleCount);
+                rb.AddForce(toOther * BubblesManager.Instance.wakeInfluence * baseBuoyantForce, ForceMode2D.Force);
             }
         }
 
-        // Adjust rise speed based on swarm density
-        float densityFactor = Mathf.Pow(1 - swarmFactor, -3);
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y * densityFactor * riseSpeedFactor, 0, 5f));//, rb.linearVelocity.z);
+        float densityFactor = Mathf.Pow(1 - BubblesManager.Instance.swarmFactor, -3);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y * densityFactor * BubblesManager.Instance.riseSpeedFactor, 0, 5f));
     }
 
     // private void OnTriggerEnter(Collider other)
