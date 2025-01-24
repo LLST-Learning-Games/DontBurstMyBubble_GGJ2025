@@ -3101,6 +3101,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 460870584149228511, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491068574579491550, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890066622735679412, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
+      propertyPath: _scaleBounds.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890066622735679412, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
+      propertyPath: _scaleBounds.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
+      propertyPath: physicsScaleOffset
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 4670775312209436363, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_Name
       value: PlayerBubble Variant

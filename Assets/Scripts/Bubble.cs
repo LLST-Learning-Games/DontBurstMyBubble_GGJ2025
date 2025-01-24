@@ -11,10 +11,14 @@ public class Bubble : MonoBehaviour
     [SerializeField] private float _popTime = 0.1f;
     [SerializeField] private bool attractedToOtherBubbles = true;
     
+    // todo - these are currently only used for the player bubble. may want to bust these out into a derived class or component.
+    [SerializeField] private Vector2 _scaleBounds = new Vector2(0.1f, 3f);
+    
     [field: SerializeField] public Collider2D Collider { get; private set; }
     
     private List<Bubble> _otherBubbles = new();
-    
+
+    private BubbleBuoyancy _buoyancy;
     private bool _isPopped = false;
     
     private void Start()
@@ -156,7 +160,9 @@ public class Bubble : MonoBehaviour
 
     public void Scale(float scaleDelta)
     {
-        gameObject.transform.localScale += new Vector3(scaleDelta, scaleDelta);
+        float newScale = transform.localScale.x + scaleDelta;
+        newScale = Mathf.Clamp(newScale, _scaleBounds.x, _scaleBounds.y);
+        gameObject.transform.localScale = new Vector3(newScale, newScale, 1f);
         
         float scaleSign = Mathf.Sign(gameObject.transform.lossyScale.x);
         float preservedScaleMagnitude = gameObject.transform.lossyScale.magnitude * scaleSign;
@@ -167,7 +173,10 @@ public class Bubble : MonoBehaviour
                 _rigidbody.gravityScale = CalculateGravityScale(preservedScaleMagnitude);
 
             if (BubblesManager.Instance.UseBuoyancy)
-                GetComponent<BubbleBuoyancy>().Initialize();
+            {
+                _buoyancy ??= GetComponent<BubbleBuoyancy>();
+                _buoyancy.Initialize();
+            }
         }
 
         _spriteRenderer.gameObject.SetActive(scaleSign > 0);

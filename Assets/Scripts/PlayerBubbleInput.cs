@@ -10,8 +10,8 @@ namespace DefaultNamespace
         
         void Update()
         {
-            HandleBubblePopInput();
-            HandleBubbleSpawnerInput();
+            //HandleBubblePopInput();
+            //HandleBubbleSpawnerInput();
             HandleInflateDeflate();
         }
 

@@ -12,16 +12,18 @@ public class BubbleBuoyancy : MonoBehaviour
     [SerializeField] private int bubbleCount;
     [SerializeField] private float volume;
     [SerializeField] private float baseBuoyantForce;
+    [SerializeField] private float physicsScaleOffset = 0f;
 
     void Start()
     {
-        if (BubblesManager.Instance && !BubblesManager.Instance.UseBuoyancy)
+        if (BubblesManager.Instance && !BubblesManager.Instance.
+            UseBuoyancy)
             return;
         
         Initialize();
     }
 
-    float ScaledPhysicsRadius => BubblesManager.Instance.physicsBaseRadius * transform.localScale.x;
+    float ScaledPhysicsRadius => BubblesManager.Instance.physicsBaseRadius * (transform.localScale.x + physicsScaleOffset);
     float DisplayRadius => transform.localScale.x * collider.radius;
     
     public void Initialize()
