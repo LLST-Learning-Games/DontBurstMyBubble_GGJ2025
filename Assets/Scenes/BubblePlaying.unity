@@ -1892,6 +1892,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
+      propertyPath: swarmFactor
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
+      propertyPath: wakeInfluence
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
+      propertyPath: riseSpeedFactor
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1518570282546090226, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.340266
@@ -3172,6 +3184,10 @@ PrefabInstance:
     - target: {fileID: 7638507747500428378, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8113744683078647197, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
+      propertyPath: maxSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8113744683078647197, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: moveSpeed
