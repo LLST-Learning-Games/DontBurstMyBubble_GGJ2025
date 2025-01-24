@@ -44,6 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7a3058eeee6b64abe53d1e156c4531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buoyancySimulationMethod: 0
+  physicsBaseRadius: 0.05
+  fluidDensity: 1000
+  gasDensity: 1.225
+  wakeInfluence: 0.2
+  swarmFactor: 0.05
+  riseSpeedFactor: 1.5
+  dummyHeaderSpacer: 0
   <StickyStrength>k__BackingField: 1
   <UseSizeInCalculations>k__BackingField: 0
   <SizeFactor>k__BackingField: 2
