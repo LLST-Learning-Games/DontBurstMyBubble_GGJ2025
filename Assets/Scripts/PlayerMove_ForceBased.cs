@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMove_ForceBased : MonoBehaviour
@@ -27,7 +28,7 @@ public class PlayerMove_ForceBased : MonoBehaviour
             force -= Vector3.left;
         
         force.Normalize();
-        force *= _movementImpuseStrength * Time.deltaTime;
+        force *= _movementImpuseStrength * Time.deltaTime;// * (float)Math.Pow(_playerRb.gameObject.transform.lossyScale.magnitude, 2);  // increase size to increase your push force but this makes left/right crazy strong.
         
         _playerRb.AddForce(force);
     }
