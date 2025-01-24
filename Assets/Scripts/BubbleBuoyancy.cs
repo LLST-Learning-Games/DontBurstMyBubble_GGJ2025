@@ -7,12 +7,14 @@ public class BubbleBuoyancy : MonoBehaviour
     [SerializeField] private CircleCollider2D collider;
     
     private Rigidbody2D rb;
+    
+    [Header("Settings")] 
+    [SerializeField] private float bouyancyOffset = 0f;
 
     [Header("Monitoring")] 
     [SerializeField] private int bubbleCount;
     [SerializeField] private float volume;
     [SerializeField] private float baseBuoyantForce;
-    [SerializeField] private float physicsScaleOffset = 0f;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class BubbleBuoyancy : MonoBehaviour
         Initialize();
     }
 
-    float ScaledPhysicsRadius => BubblesManager.Instance.physicsBaseRadius * (transform.localScale.x + physicsScaleOffset);
+    float ScaledPhysicsRadius => BubblesManager.Instance.physicsBaseRadius * transform.localScale.x;
     float DisplayRadius => transform.localScale.x * collider.radius;
     
     public void Initialize()
@@ -57,7 +59,7 @@ public class BubbleBuoyancy : MonoBehaviour
 
     void ApplyBuoyancy()
     {
-        rb.AddForce(Vector3.up * baseBuoyantForce, ForceMode2D.Force);
+        rb.AddForce(Vector3.up * (baseBuoyantForce + bouyancyOffset), ForceMode2D.Force);
     }
 
     void ApplySwarmEffects()
