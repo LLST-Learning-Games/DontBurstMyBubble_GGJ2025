@@ -160,9 +160,15 @@ public class Bubble : MonoBehaviour
         float scaleSign = Mathf.Sign(gameObject.transform.lossyScale.x);
         float preservedScaleMagnitude = gameObject.transform.lossyScale.magnitude * scaleSign;
 
-        if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
-            _rigidbody.gravityScale = CalculateGravityScale(preservedScaleMagnitude);
-        
+        if (BubblesManager.Instance)
+        {
+            if (BubblesManager.Instance.UseGravityScaling)
+                _rigidbody.gravityScale = CalculateGravityScale(preservedScaleMagnitude);
+
+            if (BubblesManager.Instance.UseBuoyancy)
+                GetComponent<BubbleBuoyancy>().Initialize();
+        }
+
         _spriteRenderer.gameObject.SetActive(scaleSign > 0);
     }
 

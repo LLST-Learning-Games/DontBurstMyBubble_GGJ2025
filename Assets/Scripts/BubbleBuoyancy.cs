@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 public class BubbleBuoyancy : MonoBehaviour
 {
     [SerializeField] private CircleCollider2D collider;
     
-    public float radius = 0.01f;  // Bubble radius in meters
+    public float physicsBaseRadius = 0.01f;  // Bubble radius in meters. This is used for Physics calculations, separate from display calculations!
     public float fluidDensity = 1000f;  // Density of water (kg/m³)
     public float gasDensity = 1.225f;  // Density of air (kg/m³)
     public float wakeInfluence = 0.2f; // Multiplier for wake acceleration
@@ -17,7 +18,8 @@ public class BubbleBuoyancy : MonoBehaviour
     [SerializeField] int bubbleCount = 0;
     
     private Rigidbody2D rb;
-    private float baseBuoyantForce;
+    [SerializeField] private float volume;
+    [SerializeField] private float baseBuoyantForce;
 
     void Start()
     {
@@ -27,23 +29,48 @@ public class BubbleBuoyancy : MonoBehaviour
         Initialize();
     }
 
-    float TrueRadius()
+
+    [SerializeField] float scaledPhysicsRadius;
+    [SerializeField] private float displayRadius;
+    float ScaledPhysicsRadius
     {
-        var returnVal =collider.radius * transform.lossyScale.x;
-        Debug.Log(returnVal);
-        return returnVal;
+        get
+        {
+            scaledPhysicsRadius = physicsBaseRadius * transform.localScale.x;
+            return scaledPhysicsRadius;
+        }
+    }
+
+    float DisplayRadius
+    {
+        get
+        {
+            displayRadius = transform.localScale.x * collider.radius;
+            return displayRadius;
+        }
     }
     
     public void Initialize()
     {
-        radius *= gameObject.transform.lossyScale.x;
-        rb = GetComponent<Rigidbody2D>();
+        //baseRadius *= gameObject.transform.lossyScale.x;
+        if (!rb)
+            rb = GetComponent<Rigidbody2D>();
+        
         rb.gravityScale = 0;//.useGravity = false;
 
-        // Compute base buoyancy using Archimedes' principle
-        float volume = (4f / 3f) * Mathf.PI * Mathf.Pow(radius, 3);
-        baseBuoyantForce = (fluidDensity - gasDensity) * volume * Physics.gravity.magnitude;
-        //Debug.Log(baseBuoyantForce);
+        if (ScaledPhysicsRadius > 0)
+        {
+            // Compute base buoyancy using Archimedes' principle
+            volume = (4f / 3f) * Mathf.PI * Mathf.Pow(ScaledPhysicsRadius, 3);
+            baseBuoyantForce = (fluidDensity - gasDensity) * volume * Physics.gravity.magnitude;
+            //Debug.Log(baseBuoyantForce);
+        }
+        else
+        {
+            volume = -((4f / 3f) * Mathf.PI * Mathf.Pow(-ScaledPhysicsRadius, 3));
+            baseBuoyantForce = (fluidDensity - gasDensity) * volume * Physics.gravity.magnitude;
+            //Debug.Log("Does this run?");
+        }
     }
 
     void FixedUpdate()
@@ -62,18 +89,18 @@ public class BubbleBuoyancy : MonoBehaviour
 
     void ApplySwarmEffects()
     {
-        Collider[] nearbyBubbles = Physics.OverlapSphere(transform.position, TrueRadius() * 3); // THIS IS NOT WORKING. radius doesn't correlate to in-game distances.
+        Collider2D[] nearbyBubbles = Physics2D.OverlapCircleAll(transform.position, DisplayRadius * 3); // THIS IS NOT WORKING. radius doesn't correlate to in-game distances. Even when I set it huge, it doesn't find anything.
         bubbleCount = 0;
 
-        foreach (Collider col in nearbyBubbles)
+        foreach (Collider2D col in nearbyBubbles)
         {
-            Debug.Log("This is running");
+            //Debug.Log("This is running");
             if (col.gameObject != gameObject && col.CompareTag("Bubble"))
             {
                 bubbleCount++;
                 Vector3 toOther = (col.transform.position - transform.position).normalized;
                 rb.AddForce(toOther * wakeInfluence * baseBuoyantForce, ForceMode2D.Force);
-                Debug.Log(bubbleCount);
+                //Debug.Log(bubbleCount);
             }
         }
 
