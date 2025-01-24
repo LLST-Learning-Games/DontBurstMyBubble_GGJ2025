@@ -23,7 +23,8 @@ public class Bubble : MonoBehaviour
             StartCoroutine(DestroyAfterSeconds());
         }
 
-        _rigidbody.gravityScale = CalculateGravityScale(gameObject.transform.lossyScale.magnitude);
+        if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
+            _rigidbody.gravityScale = CalculateGravityScale(gameObject.transform.lossyScale.magnitude);
     }
 
     // Temporary cleanup operation while we play with spawning
@@ -47,7 +48,8 @@ public class Bubble : MonoBehaviour
             _otherBubbles.Add(otherBubble);
             if (_rigidbody)
             {
-                _rigidbody.gravityScale += GetGravityDelta();
+                if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
+                    _rigidbody.gravityScale += GetGravityDelta();
             }
         }
     }
@@ -70,7 +72,8 @@ public class Bubble : MonoBehaviour
         _otherBubbles.Remove(other.GetComponent<Bubble>());
         if(_rigidbody)
         {
-            _rigidbody.gravityScale -= GetGravityDelta();
+            if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
+                _rigidbody.gravityScale -= GetGravityDelta();
         }
     }
 
@@ -157,7 +160,8 @@ public class Bubble : MonoBehaviour
         float scaleSign = Mathf.Sign(gameObject.transform.lossyScale.x);
         float preservedScaleMagnitude = gameObject.transform.lossyScale.magnitude * scaleSign;
 
-        _rigidbody.gravityScale = CalculateGravityScale(preservedScaleMagnitude);
+        if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
+            _rigidbody.gravityScale = CalculateGravityScale(preservedScaleMagnitude);
         
         _spriteRenderer.gameObject.SetActive(scaleSign > 0);
     }

@@ -44,6 +44,7 @@ public class BubbleSpawner : MonoBehaviour
     void SpawnBubble()
     {
         var spawnPosition = transform.position + Random.insideUnitSphere * spawnRadius;
+        spawnPosition.z = 0; // we're in 2D.
         var newBubble = Instantiate(bubblePrefab, spawnPosition, Quaternion.identity, transform);
         
         var scaleMultiplier = Random.Range(minMaxScale.x, minMaxScale.y);
