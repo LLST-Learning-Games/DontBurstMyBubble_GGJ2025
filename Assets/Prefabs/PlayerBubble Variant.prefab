@@ -614,7 +614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8473944811868153143, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: bouyancyOffset
-      value: -20
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 9089542231746445388, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: _player

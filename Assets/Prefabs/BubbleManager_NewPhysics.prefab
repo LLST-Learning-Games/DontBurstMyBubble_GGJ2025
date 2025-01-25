@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6726828783087033393}
+  - component: {fileID: 5965011291315363533}
   m_Layer: 0
   m_Name: BubbleManager_NewPhysics
   m_TagString: Untagged
@@ -24,10 +25,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7286568706941916502}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.114746645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5965011291315363533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286568706941916502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7a3058eeee6b64abe53d1e156c4531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buoyancySimulationMethod: 0
+  physicsBaseRadius: 0.05
+  fluidDensity: 1100
+  gasDensity: 0.9
+  wakeInfluence: 0.2
+  swarmFactor: 0.1
+  riseSpeedFactor: 1
+  dummyHeaderSpacer: 0
+  <StickyStrength>k__BackingField: 1
+  <UseSizeInCalculations>k__BackingField: 0
+  <SizeFactor>k__BackingField: 2
+  <UseDistanceInCalculations>k__BackingField: 0
+  <DistanceFactor>k__BackingField: 1
+  <ClusterGravityDelta>k__BackingField: -0.01
+  <DestroyAfterTime>k__BackingField: 30
+  <UseDestroyAfterTime>k__BackingField: 1
