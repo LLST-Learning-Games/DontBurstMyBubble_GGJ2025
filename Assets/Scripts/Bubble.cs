@@ -20,6 +20,8 @@ public class Bubble : MonoBehaviour
 
     private BubbleBuoyancy _buoyancy;
     private bool _isPopped = false;
+
+    public float NormalizedVolume => (transform.localScale.x - _scaleBounds.x) / (_scaleBounds.y - _scaleBounds.x);
     
     private void Start()
     {
