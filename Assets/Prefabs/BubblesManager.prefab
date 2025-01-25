@@ -48,9 +48,9 @@ MonoBehaviour:
   physicsBaseRadius: 0.05
   fluidDensity: 1000
   gasDensity: 1.225
-  wakeInfluence: 0.2
-  swarmFactor: 0.05
-  riseSpeedFactor: 1.5
+  wakeInfluence: 0.05
+  swarmFactor: 0.03
+  riseSpeedFactor: 1.2
   dummyHeaderSpacer: 0
   <StickyStrength>k__BackingField: 1
   <UseSizeInCalculations>k__BackingField: 0

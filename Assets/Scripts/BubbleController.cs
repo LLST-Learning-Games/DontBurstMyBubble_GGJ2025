@@ -22,6 +22,11 @@ public class BubbleController : MonoBehaviour
         HandlePlayerInput();
     }
 
+    public void ChangeMoveSpeed(float delta)
+    {
+        moveSpeed += delta;
+    }
+
     void HandlePlayerInput()
     {
         // Move left/right
