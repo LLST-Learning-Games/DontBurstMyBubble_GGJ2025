@@ -703,19 +703,7 @@ MonoBehaviour:
   CheckpointController: {fileID: 1197547667921717031}
   OnGameOver:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!4 &4937476872784644423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
