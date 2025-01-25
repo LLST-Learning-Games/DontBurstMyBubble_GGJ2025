@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 135783447029696165}
   - component: {fileID: 1604383061121427598}
   - component: {fileID: 6560019635798608560}
+  - component: {fileID: 540073752673616733}
   m_Layer: 6
-  m_Name: FixedSizeTriggerCollider
+  m_Name: BubbleCollector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,6 +116,23 @@ MonoBehaviour:
   suctionForce: 20
   minDistance: 0
   useAcceleration: 1
+--- !u!114 &540073752673616733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785179389550687258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df84a068cb438d45b917362be159b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody: {fileID: 7638507747500428378}
+  speedMultiplier: 0.2
+  minRadius: 2
+  maxRadius: 20
+  originalRadius: 0
 --- !u!1 &6549710339747953438
 GameObject:
   m_ObjectHideFlags: 0
