@@ -496,15 +496,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.114746645
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -512,15 +512,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -581,6 +581,10 @@ PrefabInstance:
     - target: {fileID: 9089542231746445388, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: _scaleBounds.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089542231746445388, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
+      propertyPath: attractedToOtherBubbles
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -652,7 +656,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
