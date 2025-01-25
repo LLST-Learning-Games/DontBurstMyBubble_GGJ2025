@@ -3424,7 +3424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: bouyancyOffset
-      value: -20
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: physicsScaleOffset
@@ -3432,7 +3432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: maxBuoyancySwarmForce
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4670775312209436363, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_Name
