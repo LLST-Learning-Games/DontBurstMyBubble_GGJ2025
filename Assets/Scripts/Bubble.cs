@@ -38,7 +38,7 @@ public class Bubble : MonoBehaviour
     private IEnumerator DestroyAfterSeconds()
     {
         yield return new WaitForSeconds(BubblesManager.Instance.DestroyAfterTime);
-        Destroy(gameObject);
+        yield return PopBubbleCoroutine();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
