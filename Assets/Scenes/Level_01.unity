@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
+      propertyPath: bouyancyOffset
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 4670775312209436363, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_Name
       value: PlayerBubble Variant
@@ -196,7 +200,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 320738446}
-  - component: {fileID: 320738447}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -224,34 +227,6 @@ Transform:
   - {fileID: 769523354618717853}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &320738447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320738445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7a3058eeee6b64abe53d1e156c4531, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buoyancySimulationMethod: 0
-  physicsBaseRadius: 0.05
-  fluidDensity: 700
-  gasDensity: 0.9
-  wakeInfluence: 0.2
-  swarmFactor: 0.1
-  riseSpeedFactor: 0.6
-  dummyHeaderSpacer: 0
-  <StickyStrength>k__BackingField: 1
-  <UseSizeInCalculations>k__BackingField: 0
-  <SizeFactor>k__BackingField: 2
-  <UseDistanceInCalculations>k__BackingField: 0
-  <DistanceFactor>k__BackingField: 1
-  <ClusterGravityDelta>k__BackingField: -0.01
-  <DestroyAfterTime>k__BackingField: 30
-  <UseDestroyAfterTime>k__BackingField: 1
 --- !u!4 &467849181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3881789744283377949, guid: 882f24881dd774bbe8af665c925b1fd2, type: 3}
@@ -442,6 +417,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5026721516808383342, guid: a840c96663e3f4318aebdefcd62f9cdc, type: 3}
   m_PrefabInstance: {fileID: 4447500463256878051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &335852230338902464
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.114746645
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286568706941916502, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
+      propertyPath: m_Name
+      value: BubbleManager_NewPhysics
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
 --- !u!1001 &769523354618717852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -746,6 +778,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 335852230338902464}
   - {fileID: 320738446}
   - {fileID: 953464614}
   - {fileID: 298540863}
