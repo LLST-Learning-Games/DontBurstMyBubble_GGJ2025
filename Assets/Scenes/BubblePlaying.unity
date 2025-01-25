@@ -1984,18 +1984,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
-      propertyPath: swarmFactor
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
-      propertyPath: wakeInfluence
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
-      propertyPath: riseSpeedFactor
-      value: 1.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1518570282546090226, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.340266
