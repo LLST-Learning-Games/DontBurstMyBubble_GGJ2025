@@ -52,9 +52,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 5217711319184765185}
   _rigidbody: {fileID: 2439172162456581026}
-  _isPlayer: 0
   _popTime: 0.3
   attractedToOtherBubbles: 1
+  _player: {fileID: 0}
   _scaleBounds: {x: 0.1, y: 3}
   <Collider>k__BackingField: {fileID: 1032627565988397796}
 --- !u!114 &8473944811868153143
@@ -71,6 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 1032627565988397796}
   bouyancyOffset: 0
+  maxBuoyancySwarmForce: 2
   bubbleCount: 0
   volume: 0
   baseBuoyantForce: 0
