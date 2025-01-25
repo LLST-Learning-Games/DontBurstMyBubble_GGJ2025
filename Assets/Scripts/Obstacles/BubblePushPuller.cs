@@ -3,18 +3,25 @@ using UnityEngine;
 
 public class BubblePushPuller : MonoBehaviour
 {
-    [SerializeField] private Transform _pushSource;
-    [SerializeField] private Transform _pushDirection;
     [SerializeField] private float _pushMagnitude;
+    [SerializeField] private float _targetSpeed;
+    
+    private bool _isPushing;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.isTrigger)
-        {
-            return;
-        }
-        
-    }
+    // public void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.isTrigger)
+    //     {
+    //         return;
+    //     }
+    //     _isPushing = true;
+    //     var otherRb = other.gameObject.GetComponent<Rigidbody2D>();
+    //     if (!otherRb)
+    //     {
+    //         return;
+    //     }
+    //     otherRb.
+    // }
 
     public void OnTriggerStay2D(Collider2D other)
     {
@@ -22,19 +29,24 @@ public class BubblePushPuller : MonoBehaviour
         {
             return;
         }
+        _isPushing = true;
         var otherRb = other.gameObject.GetComponent<Rigidbody2D>();
         if (!otherRb)
         {
             return;
         }
         
-        var pushVector = _pushDirection.localPosition - _pushSource.localPosition;
-
-        pushVector *= _pushMagnitude;
-        otherRb.AddForce(pushVector, ForceMode2D.Force);
+        Vector2 targetVelocity = transform.rotation * Vector2.up * _targetSpeed;
+        Vector2 force = (targetVelocity - otherRb.linearVelocity) * _pushMagnitude;
+        otherRb.AddForce(force);
+    }
         
-        // Vector3 targetVelocity = transform.rotation * Vector3.forward * targetSpeed;
-        // Vector3 force = (targetVelocity - rb.velocity) * forceMult;
-        // rb.AddForce(force);
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.isTrigger)
+        {
+            _isPushing = true;
+        }
+        
     }
 }
