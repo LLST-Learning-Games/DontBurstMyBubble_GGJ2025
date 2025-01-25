@@ -2074,18 +2074,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
-      propertyPath: gasDensity
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
-      propertyPath: fluidDensity
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081587132017451097, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
-      propertyPath: riseSpeedFactor
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 1518570282546090226, guid: aa6b3c3ed87cc81469ff8eaeafb6932e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.340266
@@ -3375,65 +3363,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 132505710}
-    - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: OnGameOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 460870584149228511, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3491068574579491550, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3890066622735679412, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: _scaleBounds.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3890066622735679412, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: _scaleBounds.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: bouyancyOffset
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: physicsScaleOffset
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486077342510324431, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: maxBuoyancySwarmForce
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4670775312209436363, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_Name
       value: PlayerBubble Variant
@@ -3477,22 +3409,6 @@ PrefabInstance:
     - target: {fileID: 4937476872784644423, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7638507747500428378, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8113744683078647197, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: maxSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8113744683078647197, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: moveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8113744683078647197, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: boostForce
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -348,6 +348,18 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 7638507747500428378}
+    - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: boostForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -484,11 +496,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.27
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -528,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2439172162456581026, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2439172162456581026, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_Constraints
@@ -550,6 +562,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8473944811868153143, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
+      propertyPath: bouyancyOffset
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 9089542231746445388, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: _player
       value: 
@@ -557,6 +573,14 @@ PrefabInstance:
     - target: {fileID: 9089542231746445388, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: _isPlayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089542231746445388, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
+      propertyPath: _scaleBounds.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089542231746445388, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
+      propertyPath: _scaleBounds.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -625,7 +649,19 @@ MonoBehaviour:
   CheckpointController: {fileID: 1197547667921717031}
   OnGameOver:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &4937476872784644423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
