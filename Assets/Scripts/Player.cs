@@ -11,6 +11,14 @@ public class Player : MonoBehaviour
 	
 	private float _lastCollisionTime;
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.G))
+		{
+			PlayerState.Current.IsGodMode = !PlayerState.Current.IsGodMode;
+		}
+	}
+	
 	public bool TryDealDamage()
 	{
 		if (PlayerState.Current.IsGodMode)
