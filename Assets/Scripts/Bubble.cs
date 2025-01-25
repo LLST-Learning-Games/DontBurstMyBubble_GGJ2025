@@ -7,9 +7,11 @@ public class Bubble : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private bool _isPlayer = false;
     [SerializeField] private float _popTime = 0.1f;
     [SerializeField] private bool attractedToOtherBubbles = true;
+    [SerializeField] private Player _player;
+
+    private bool _isPlayer => _player;
     
     // todo - these are currently only used for the player bubble. may want to bust these out into a derived class or component.
     [SerializeField] private Vector2 _scaleBounds = new Vector2(0.1f, 3f);
@@ -20,6 +22,8 @@ public class Bubble : MonoBehaviour
 
     private BubbleBuoyancy _buoyancy;
     private bool _isPopped = false;
+
+    public float NormalizedVolume => (transform.localScale.x - _scaleBounds.x) / (_scaleBounds.y - _scaleBounds.x);
     
     private void Start()
     {
@@ -141,18 +145,9 @@ public class Bubble : MonoBehaviour
     public void PopBubble()
     {
         if (_isPlayer)
-        { 
-            --PlayerState.Current.Lives;
-            if (!PlayerState.Current.IsGodMode && PlayerState.Current.Lives == 0)
-            {
-                StartCoroutine(PopBubbleCoroutine());
-            }
-        }
-        else
-        {
-            StartCoroutine(PopBubbleCoroutine());
-        }
-        
+            return;
+
+        StartCoroutine(PopBubbleCoroutine());
     }
 
     private IEnumerator PopBubbleCoroutine()
