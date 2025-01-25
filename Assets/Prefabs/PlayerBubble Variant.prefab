@@ -1,5 +1,104 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5785179389550687258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3474855699793451202}
+  - component: {fileID: 4003684855831655526}
+  - component: {fileID: 135783447029696165}
+  - component: {fileID: 1604383061121427598}
+  m_Layer: 6
+  m_Name: FixedSizeTriggerCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3474855699793451202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785179389550687258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4937476872784644423}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4003684855831655526
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785179389550687258}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 2
+--- !u!114 &135783447029696165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785179389550687258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb26f8c2afcd3a4999e68d8fdbb96b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleController: {fileID: 8113744683078647197}
+  moveForceModifier: 5
+  numBubbles: 0
+--- !u!114 &1604383061121427598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785179389550687258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943593908ab77104d8cf5ff1d90f084f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedScale: 1
+  inverseScale: 0
 --- !u!1 &6549710339747953438
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +252,30 @@ PrefabInstance:
       propertyPath: _playerBubbleSpawner
       value: 
       objectReference: {fileID: 545016426630337600}
+    - target: {fileID: 827608508033810476, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: ScaleChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 827608508033810476, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: ScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1604383061121427598}
+    - target: {fileID: 827608508033810476, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: ScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 827608508033810476, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: ScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Scale
+      objectReference: {fileID: 0}
+    - target: {fileID: 827608508033810476, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: ScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InverseScaler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 827608508033810476, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: ScaleChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4425862542048459053, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
       propertyPath: _playerRb
       value: 
@@ -235,6 +358,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6793887720938969104, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
   m_PrefabInstance: {fileID: 943810710152313843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8113744683078647197 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+  m_PrefabInstance: {fileID: 943810710152313843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cd02913728c1a4fab857a95754fe26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3198316493383698134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -436,6 +570,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6003766926556455907}
+    - targetCorrespondingSourceObject: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3474855699793451202}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 795216414922481971, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       insertIndex: -1
@@ -486,6 +623,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InvulnerabilityTimeSeconds: 2
   CheckpointController: {fileID: 1197547667921717031}
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &4937476872784644423 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
