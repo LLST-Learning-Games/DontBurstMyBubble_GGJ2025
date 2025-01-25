@@ -140,7 +140,19 @@ public class Bubble : MonoBehaviour
 
     public void PopBubble()
     {
-        StartCoroutine(PopBubbleCoroutine());
+        if (_isPlayer)
+        { 
+            --PlayerState.Current.Lives;
+            if (!PlayerState.Current.IsGodMode && PlayerState.Current.Lives == 0)
+            {
+                StartCoroutine(PopBubbleCoroutine());
+            }
+        }
+        else
+        {
+            StartCoroutine(PopBubbleCoroutine());
+        }
+        
     }
 
     private IEnumerator PopBubbleCoroutine()

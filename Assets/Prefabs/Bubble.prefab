@@ -53,7 +53,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 5217711319184765185}
   _rigidbody: {fileID: 2439172162456581026}
   _isPlayer: 0
-  _popTime: 0.1
+  _popTime: 0.3
   attractedToOtherBubbles: 1
   _scaleBounds: {x: 0.1, y: 3}
   <Collider>k__BackingField: {fileID: 1032627565988397796}

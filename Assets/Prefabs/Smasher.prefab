@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2761996314108354512}
   - component: {fileID: 2266636281904736325}
   - component: {fileID: 8291082886427649307}
+  - component: {fileID: 3528350505354485393}
   m_Layer: 0
   m_Name: Smasher
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.9, y: 22.1, z: -0.01555869}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -157,3 +158,15 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &3528350505354485393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8886417700555426941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4392009ab85a497495f04741b7a6fc26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
