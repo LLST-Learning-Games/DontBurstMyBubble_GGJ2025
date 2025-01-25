@@ -47,10 +47,10 @@ MonoBehaviour:
   buoyancySimulationMethod: 0
   physicsBaseRadius: 0.05
   fluidDensity: 1000
-  gasDensity: 1.225
+  gasDensity: 0.9
   wakeInfluence: 0.05
   swarmFactor: 0.03
-  riseSpeedFactor: 1.2
+  riseSpeedFactor: 0.6
   dummyHeaderSpacer: 0
   <StickyStrength>k__BackingField: 1
   <UseSizeInCalculations>k__BackingField: 0

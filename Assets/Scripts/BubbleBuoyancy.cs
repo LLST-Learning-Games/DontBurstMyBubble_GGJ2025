@@ -10,6 +10,7 @@ public class BubbleBuoyancy : MonoBehaviour
     
     [Header("Settings")] 
     [SerializeField] private float bouyancyOffset = 0f;
+    [SerializeField] private float maxBuoyancySwarmForce = 5f;
 
     [Header("Monitoring")] 
     [SerializeField] private int bubbleCount;
@@ -75,9 +76,11 @@ public class BubbleBuoyancy : MonoBehaviour
                 rb.AddForce(toOther * BubblesManager.Instance.wakeInfluence * baseBuoyantForce, ForceMode2D.Force);
             }
         }
-
-        float densityFactor = Mathf.Pow(1 - BubblesManager.Instance.swarmFactor, -3);
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y * densityFactor * BubblesManager.Instance.riseSpeedFactor, 0, 5f));
+        if (rb.linearVelocity.y < maxBuoyancySwarmForce)
+        {
+            float densityFactor = Mathf.Pow(1 - BubblesManager.Instance.swarmFactor, -3) * BubblesManager.Instance.riseSpeedFactor;
+            rb.AddForce(Vector3.up *  densityFactor, ForceMode2D.Force);
+        }
     }
 
     // private void OnTriggerEnter(Collider other)

@@ -37,7 +37,8 @@ public class BubblePushPuller : MonoBehaviour
         }
         
         Vector2 targetVelocity = transform.rotation * Vector2.up * _targetSpeed;
-        Vector2 force = (targetVelocity - otherRb.linearVelocity) * _pushMagnitude;
+        Vector2 force = (targetVelocity) * _pushMagnitude;
+        Debug.Log($"Force: {force}, ForceDir: {force.normalized}, TargetVelocity: {targetVelocity} Velocity: {otherRb.linearVelocity}");
         otherRb.AddForce(force);
     }
         
