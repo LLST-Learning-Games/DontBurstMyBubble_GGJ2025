@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4003684855831655526}
   - component: {fileID: 135783447029696165}
   - component: {fileID: 1604383061121427598}
+  - component: {fileID: 6560019635798608560}
   m_Layer: 6
   m_Name: FixedSizeTriggerCollider
   m_TagString: Untagged
@@ -99,6 +100,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedScale: 1
   inverseScale: 0
+--- !u!114 &6560019635798608560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785179389550687258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e25f3fc40319f5498bef1fe1d9dddd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suctionForce: 20
+  minDistance: 0
+  useAcceleration: 1
 --- !u!1 &6549710339747953438
 GameObject:
   m_ObjectHideFlags: 0
