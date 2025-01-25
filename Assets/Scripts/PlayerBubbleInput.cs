@@ -53,12 +53,12 @@ namespace DefaultNamespace
                 return;
             }
             
-            if (Input.GetKey(KeyCode.C))
+            if (Input.GetKey(KeyCode.C) || Input.GetKey("joystick button 2"))
             {
                 _playerBubble.Scale(inflateSpeed * Time.deltaTime);//.transform.localScale += Vector3.one * (inflateSpeed * Time.deltaTime);
             }
             
-            if (Input.GetKey(KeyCode.Z))
+            if (Input.GetKey(KeyCode.Z) || Input.GetKey("joystick button 1"))
             {
                 _playerBubble.Scale(-inflateSpeed * Time.deltaTime);//.transform.localScale -= Vector3.one * (inflateSpeed * Time.deltaTime);
             }

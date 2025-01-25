@@ -25,7 +25,7 @@ public class BubbleController : MonoBehaviour
     void HandlePlayerInput()
     {
         // Move left/right
-        float horizontalInput = Input.GetAxis("Horizontal"); // A (-1) / D (+1)
+        float horizontalInput = Input.GetAxis("Horizontal"); // A (-1) / D (+1)\
         rb.AddForce(Vector2.right * horizontalInput * moveSpeed, ForceMode2D.Force);
         
         // Move up/down
