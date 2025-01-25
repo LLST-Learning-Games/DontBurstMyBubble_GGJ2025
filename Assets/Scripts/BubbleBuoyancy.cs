@@ -18,8 +18,7 @@ public class BubbleBuoyancy : MonoBehaviour
 
     void Start()
     {
-        if (BubblesManager.Instance && !BubblesManager.Instance.
-            UseBuoyancy)
+        if (BubblesManager.Instance && !BubblesManager.Instance.UseBuoyancy)
             return;
         
         Initialize();
