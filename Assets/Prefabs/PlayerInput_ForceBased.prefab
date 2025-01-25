@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6793887720938969104}
   - component: {fileID: 5764886629980292365}
-  - component: {fileID: 4425862542048459053}
   - component: {fileID: 827608508033810476}
   - component: {fileID: 9043466758002542190}
   m_Layer: 0
@@ -51,20 +50,6 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   zoomInTowardsCursor: 1
   zoomOutTowardsCursor: 1
---- !u!114 &4425862542048459053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6304956063241464654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88589c0c73bb48a494c85b952cbe29c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerRb: {fileID: 0}
-  _movementImpuseStrength: 1000
 --- !u!114 &827608508033810476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  _allowVerticalInput: 0
   moveSpeed: 40
   boostForce: 800
   maxSpeed: 40

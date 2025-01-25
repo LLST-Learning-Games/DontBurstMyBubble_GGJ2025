@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107236202288969407}
+  - component: {fileID: 9089542231746445388}
+  - component: {fileID: 8473944811868153143}
   - component: {fileID: 7332219301000997161}
   - component: {fileID: 2439172162456581026}
-  - component: {fileID: 9089542231746445388}
   - component: {fileID: 1032627565988397796}
-  - component: {fileID: 8473944811868153143}
   m_Layer: 6
   m_Name: Bubble
   m_TagString: Bubble
@@ -38,6 +38,42 @@ Transform:
   - {fileID: 469353873983381664}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9089542231746445388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795216414922481971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157dbf30213d980488acadab89d3a742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 5217711319184765185}
+  _rigidbody: {fileID: 2439172162456581026}
+  _isPlayer: 0
+  _popTime: 0.1
+  attractedToOtherBubbles: 1
+  _scaleBounds: {x: 0.1, y: 3}
+  <Collider>k__BackingField: {fileID: 1032627565988397796}
+--- !u!114 &8473944811868153143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795216414922481971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ae2a5f1ac23d7241add63c8d5f75a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 1032627565988397796}
+  bouyancyOffset: 0
+  bubbleCount: 0
+  volume: 0
+  baseBuoyantForce: 0
 --- !u!58 &7332219301000997161
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -101,23 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &9089542231746445388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795216414922481971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157dbf30213d980488acadab89d3a742, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spriteRenderer: {fileID: 5217711319184765185}
-  _rigidbody: {fileID: 2439172162456581026}
-  _isPlayer: 0
-  _popTime: 0.1
-  <Collider>k__BackingField: {fileID: 1032627565988397796}
 --- !u!58 &1032627565988397796
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -154,22 +173,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
---- !u!114 &8473944811868153143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795216414922481971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae2a5f1ac23d7241add63c8d5f75a28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider: {fileID: 1032627565988397796}
-  bubbleCount: 0
-  volume: 0
-  baseBuoyantForce: 0
 --- !u!1 &4209964395061156675
 GameObject:
   m_ObjectHideFlags: 0
