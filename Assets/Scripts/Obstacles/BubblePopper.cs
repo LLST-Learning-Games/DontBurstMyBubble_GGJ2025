@@ -1,15 +1,15 @@
 
 using UnityEngine;
 
-public class BubblePopper
+public class BubblePopper : MonoBehaviour
 {
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnCollisionEnter2D(Collision2D other)
     {
         var bubble = other.gameObject.GetComponent<Bubble>();
         if (bubble)
         {
             bubble.PopBubble();
-        }
+        } 
 
     }
 }
