@@ -1,9 +1,6 @@
 using UnityEngine;
 
-namespace DefaultNamespace
+public class PlayerStartPoint : MonoBehaviour
 {
-	public class PlayerStartPoint : MonoBehaviour
-	{
-		public int StartPointID;
-	}
+	public int StartPointID;
 }
