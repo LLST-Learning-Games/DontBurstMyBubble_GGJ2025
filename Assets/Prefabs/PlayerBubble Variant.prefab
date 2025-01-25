@@ -382,6 +382,18 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 7638507747500428378}
+    - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: maxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: moveSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
+      propertyPath: boostForce
+      value: 1200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
