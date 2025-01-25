@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollMultiplier: 0.1
   mainCamera: {fileID: 0}
-  zoomInTowardsCursor: 1
-  zoomOutTowardsCursor: 1
+  zoomInTowardsCursor: 0
+  zoomOutTowardsCursor: 0
 --- !u!114 &827608508033810476
 MonoBehaviour:
   m_ObjectHideFlags: 0
