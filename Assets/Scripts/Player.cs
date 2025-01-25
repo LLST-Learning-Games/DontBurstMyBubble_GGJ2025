@@ -18,6 +18,14 @@ public class Player : MonoBehaviour
 			PlayerState.Current.IsGodMode = !PlayerState.Current.IsGodMode;
 		}
 	}
+
+	public void Kill()
+	{
+		Debug.Log($"[{GetType().Name}] Player died");
+		PlayerState.Current.Lives = 0;
+		Time.timeScale = 0.0f;
+		OnGameOver?.Invoke();
+	}
 	
 	public bool TryDealDamage()
 	{
@@ -33,9 +41,7 @@ public class Player : MonoBehaviour
 		
 		if (--PlayerState.Current.Lives <= 0)
 		{
-			Debug.Log($"[{GetType().Name}] Player died");
-			Time.timeScale = 0.0f;
-			OnGameOver?.Invoke();
+			Kill();
 		}
 
 		return true;

@@ -1,21 +1,33 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class PlayerCheckpointController : MonoBehaviour
 {
+	private List<PlayerStartPoint> _playerStartPoints = new();
+	
 	private void Start()
 	{
-		ValidateStartPoints();
+		FindStartPoints();
 		MoveToStartPoint();
 	}
 	
 	#if UNITY_EDITOR
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.R))
+		foreach (var playerStartPoint in _playerStartPoints)
 		{
-			MoveToStartPoint();
+			if (playerStartPoint.StartPointID is < 0 or > 9)
+				continue;
+
+			if (Input.GetKeyDown(KeyCode.Alpha0 + playerStartPoint.StartPointID))
+			{
+				PlayerState.Current.LastStartPointID = playerStartPoint.StartPointID;
+				PlayerState.LastCheckpoint = PlayerState.Current with { };
+				MoveToStartPoint();
+				return;
+			}
 		}
 	}
 	#endif
@@ -28,10 +40,11 @@ public class PlayerCheckpointController : MonoBehaviour
 		transform.position = startPoint.transform.position;
 	}
 
-	private void ValidateStartPoints()
+	private void FindStartPoints()
 	{
 		var groups = FindObjectsByType<PlayerStartPoint>(FindObjectsSortMode.None)
 			.GroupBy(psp => psp.StartPointID);
+		_playerStartPoints.Clear();
 
 		foreach (var group in groups)
 		{
@@ -39,6 +52,8 @@ public class PlayerCheckpointController : MonoBehaviour
 			{
 				Debug.LogError($"[{GetType().Name}] There are {group.Count()} copies of the {group.FirstOrDefault().StartPointID} start point!");
 			}
+			
+			_playerStartPoints.AddRange(group);
 		}
 	}
 	
