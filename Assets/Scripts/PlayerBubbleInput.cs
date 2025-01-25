@@ -4,6 +4,9 @@ namespace DefaultNamespace
 {
     public class PlayerBubbleInput : MonoBehaviour
     {
+        [SerializeField] private KeyCode[] inflateKeys = { KeyCode.W, KeyCode.C };
+        [SerializeField] private KeyCode[] deflateKeys = { KeyCode.S, KeyCode.Z };
+        
         [SerializeField] private Bubble _playerBubble;
         [SerializeField] private BubbleSpawner _playerBubbleSpawner;
         [SerializeField] private float inflateSpeed = 2f;
@@ -53,14 +56,25 @@ namespace DefaultNamespace
                 return;
             }
             
-            if (Input.GetKey(KeyCode.C) || Input.GetKey("joystick button 2"))
+            if (IsPressed(inflateKeys) || Input.GetKey("joystick button 2"))
             {
                 _playerBubble.Scale(inflateSpeed * Time.deltaTime);//.transform.localScale += Vector3.one * (inflateSpeed * Time.deltaTime);
             }
             
-            if (Input.GetKey(KeyCode.Z) || Input.GetKey("joystick button 1"))
+            if (IsPressed(deflateKeys) || Input.GetKey("joystick button 1"))
             {
                 _playerBubble.Scale(-inflateSpeed * Time.deltaTime);//.transform.localScale -= Vector3.one * (inflateSpeed * Time.deltaTime);
+            }
+
+            bool IsPressed(KeyCode[] keyCodes)
+            {
+                foreach (var keyCode in keyCodes)
+                {
+                    if (Input.GetKey(keyCode))
+                        return true;
+                }
+                
+                return false;
             }
         }
     }
