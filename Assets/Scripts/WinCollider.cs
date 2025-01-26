@@ -17,7 +17,8 @@ public class WinCollider : MonoBehaviour
 			return;
 
 		int objectiveScore = CalculateScore(
-			bubble.AttachedBubbles.Count,
+			bubble.GetComponentInChildren<SuctionZone>().bubbles.Count,
+			//bubble.AttachedBubbles.Count,
 			PlayerState.Current.Lives,
 			DateTime.Now - PlayerState.Current.LevelStartTime
 		);
