@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class WinCollider : MonoBehaviour
 {
+	public const int pointsPerBubble = 100;
+	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		Player player = other.GetComponent<Player>();
@@ -27,7 +29,7 @@ public class WinCollider : MonoBehaviour
 
 	public static int CalculateScore(int numberOfBubbles, int numberOfLives, TimeSpan duration)
 	{
-		return (int)((numberOfBubbles * 100)
+		return (int)((numberOfBubbles * pointsPerBubble)
 			+ (numberOfLives * 10_000)
 			+ (duration.TotalSeconds * 0.0));
 	}
