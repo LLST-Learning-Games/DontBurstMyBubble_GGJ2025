@@ -59,17 +59,35 @@ namespace DefaultNamespace
                 return;
             }
             
-            if (IsPressed(inflateKeys) || Input.GetKey("joystick button 2"))
+            var input = Input.GetAxis("Vertical");
+            
+            if (IsPressed(inflateKeys))
             {
-                _playerBubble.Scale(inflateSpeed * Time.deltaTime);//.transform.localScale += Vector3.one * (inflateSpeed * Time.deltaTime);
+                input = 1.0f;
+            }
+
+            if (IsPressed(deflateKeys))
+            {
+                input = -1.0f;
+            }
+            
+            if(Mathf.Abs(input) > 0.0f)
+            {
+                _playerBubble.Scale(inflateSpeed * Time.deltaTime * input);
                 ScaleChanged.Invoke(_playerBubble.transform.localScale.x);
             }
             
-            if (IsPressed(deflateKeys) || Input.GetKey("joystick button 1"))
-            {
-                _playerBubble.Scale(-inflateSpeed * Time.deltaTime);//.transform.localScale -= Vector3.one * (inflateSpeed * Time.deltaTime);
-                ScaleChanged.Invoke(_playerBubble.transform.localScale.x);
-            } 
+            // if (IsPressed(inflateKeys) || Input.GetKey("joystick button 2"))
+            // {
+            //     _playerBubble.Scale(inflateSpeed * Time.deltaTime);//.transform.localScale += Vector3.one * (inflateSpeed * Time.deltaTime);
+            //     ScaleChanged.Invoke(_playerBubble.transform.localScale.x);
+            // }
+            //
+            // if (IsPressed(deflateKeys) || Input.GetKey("joystick button 1"))
+            // {
+            //     _playerBubble.Scale(-inflateSpeed * Time.deltaTime);//.transform.localScale -= Vector3.one * (inflateSpeed * Time.deltaTime);
+            //     ScaleChanged.Invoke(_playerBubble.transform.localScale.x);
+            // } 
 
             bool IsPressed(KeyCode[] keyCodes)
             {

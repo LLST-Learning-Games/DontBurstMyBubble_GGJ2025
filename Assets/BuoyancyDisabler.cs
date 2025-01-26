@@ -65,6 +65,7 @@ public class BuoyancyDisabler : MonoBehaviour
             numBubbles++;
             //onBubbleAdded.Invoke();
             bubbleController.ChangeMoveSpeed(moveForceModifier);
+            otherBuoyancy.GetComponent<Bubble>().StopAllCoroutines();//Coroutine("DestroyAfterTimeCoroutine");
         }
     }
     

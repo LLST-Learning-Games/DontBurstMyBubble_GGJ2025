@@ -2,16 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Annihilator : MonoBehaviour
 {
+    [SerializeField] private TextMeshPro statusText;
+    [SerializeField] private int max = 10;
     [SerializeField] private bool addtoScoreOnAnnihilate = false;
     [SerializeField] private float shrinkTime = 1f;
     [Header("Monitoring")]
     [SerializeField] List<GameObject> shrinkingObjects = new List<GameObject>();
-    
+
+    [SerializeField] private int count;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +24,9 @@ public class Annihilator : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (count >= max)
+            return;
+        
         if (other.isTrigger)
             return;
         
@@ -54,9 +61,21 @@ public class Annihilator : MonoBehaviour
 
         transform.localScale = endScale; // Ensure exact target scale
         shrinkingObjects.Remove(obj);
-        Destroy(obj);    
-        
+        Destroy(obj);
+        UpCount();
         if (addtoScoreOnAnnihilate)
             PlayerState.Current.Score += WinCollider.pointsPerBubble;
+    }
+
+    void UpCount()
+    {
+        count++;
+        statusText.text = count.ToString();
+
+        if (count >= max)
+        {
+            StopAllCoroutines();
+            statusText.text = "FULL";
+        }
     }
 }
