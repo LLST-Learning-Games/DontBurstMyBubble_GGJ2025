@@ -33,12 +33,20 @@ public class Annihilator : MonoBehaviour
         {
             TimeRemaining = TimeSpan.FromSeconds(timeLimit);
             StartCoroutine(TimerCoroutine());
+            EventManager.Instance.AddTime.AddListener(OnAddTimeEvent);
         }
     }
 
+    void OnAddTimeEvent(float timeAdd)
+    {
+        timeRemaining += timeAdd;
+    }
+
+    private float timeRemaining;
+
     IEnumerator TimerCoroutine()
     {
-        var timeRemaining = timeLimit;
+        timeRemaining = timeLimit;
         while (timeRemaining > 0)
         {
             timeText.text = Mathf.RoundToInt(timeRemaining).ToString(); // Update the UI text
