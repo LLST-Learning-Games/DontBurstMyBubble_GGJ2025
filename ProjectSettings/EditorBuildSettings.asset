@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 994dac50cf6844fb693cdb355537f0ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/BubblePlayer.unity
     guid: 1d4d307c5c9595840897787a6c5d737d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/BubblePlaying.unity
     guid: 7fa70578daa255440b7ab45ce56448a9
   - enabled: 1
     path: Assets/Scenes/Level_01.unity
     guid: 28331107fd58f44909af35a16e52619f
+  - enabled: 1
+    path: Assets/Scenes/IntroLore.unity
+    guid: 3a9d890d72f71554ba0739f048e3b863
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
