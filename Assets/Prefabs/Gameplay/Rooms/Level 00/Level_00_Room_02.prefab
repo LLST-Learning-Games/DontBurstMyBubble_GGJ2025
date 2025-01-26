@@ -1465,14 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 698589a4ffa5a41bf828a18e307ece28, type: 2}
     - target: {fileID: 7592281134438153063, guid: a0e62ed6dba6d44c2bf137f596b87425, type: 3}
       propertyPath: m_text
-      value: 'Collect a magic
-
-        bubble to grant
-
-        you one hit with
-
-        a
-        spike without popping'
+      value: "Collect magic\nbubbles to increase\nyour time limit for \ndropoffs"
       objectReference: {fileID: 0}
     - target: {fileID: 7592281134438153063, guid: a0e62ed6dba6d44c2bf137f596b87425, type: 3}
       propertyPath: m_margin.y
@@ -3486,6 +3479,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5558420984125426067}
     m_Modifications:
+    - target: {fileID: 153975617769153913, guid: c4b205564086bd74989730aa98783ee8, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
     - target: {fileID: 807708801834405341, guid: c4b205564086bd74989730aa98783ee8, type: 3}
       propertyPath: m_Name
       value: Dropoff Variant (1)
