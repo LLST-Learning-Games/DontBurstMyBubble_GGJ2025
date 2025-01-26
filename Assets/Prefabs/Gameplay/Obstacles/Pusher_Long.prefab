@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pusher_Long
       objectReference: {fileID: 0}
+    - target: {fileID: 7986220539894838212, guid: b6c63b12bb97322468142b36bc3a7b8e, type: 3}
+      propertyPath: _pushMagnitude
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

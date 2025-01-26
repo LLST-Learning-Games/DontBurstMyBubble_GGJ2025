@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public record PlayerState
@@ -9,4 +10,5 @@ public record PlayerState
 	public int Lives = 1;
 	public int Score = 0;
 	public int LastStartPointID = 0;
+	public DateTime LevelStartTime = DateTime.Now;
 }
