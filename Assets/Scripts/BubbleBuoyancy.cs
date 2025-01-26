@@ -11,6 +11,7 @@ public class BubbleBuoyancy : MonoBehaviour
     [Header("Settings")] 
     [SerializeField] private float bouyancyOffset = 0f;
     [SerializeField] private float maxBuoyancySwarmForce = 5f;
+    [SerializeField] private float buoyancyMultiplier = 1;
 
     [Header("Monitoring")] 
     [SerializeField] private int bubbleCount;
@@ -59,7 +60,7 @@ public class BubbleBuoyancy : MonoBehaviour
 
     void ApplyBuoyancy()
     {
-        rb.AddForce(Vector3.up * (baseBuoyantForce + bouyancyOffset), ForceMode2D.Force);
+        rb.AddForce(Vector3.up * (baseBuoyantForce * buoyancyMultiplier + bouyancyOffset), ForceMode2D.Force);
     }
 
     void ApplySwarmEffects()

@@ -3131,28 +3131,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5799329070701643246, guid: 2d5036baa817c884f83d842f336c61e1, type: 3}
   m_PrefabInstance: {fileID: 3847021600166211968}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1785799446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5785179389550687258, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-  m_PrefabInstance: {fileID: 2000179750}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1785799448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785799446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1df84a068cb438d45b917362be159b68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidBody: {fileID: 2022139751}
-  speedMultiplier: 0.2
-  minRadius: 2
-  maxRadius: 20
-  originalRadius: 0
 --- !u!1 &1818595657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,10 +3356,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5785179389550687258, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: m_Name
-      value: BubbleCollector
-      objectReference: {fileID: 0}
     - target: {fileID: 7638507747500428378, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -3401,16 +3375,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5785179389550687258, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1785799448}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
---- !u!50 &2022139751 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 7638507747500428378, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-  m_PrefabInstance: {fileID: 2000179750}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2022139753 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 246606769229288266, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
