@@ -30,7 +30,7 @@ public class WinCollider : MonoBehaviour
 	public static int CalculateScore(int numberOfBubbles, int numberOfLives, TimeSpan duration)
 	{
 		return (int)((numberOfBubbles * pointsPerBubble)
-			+ (numberOfLives * 10_000)
+			//+ (numberOfLives * 10_000)
 			+ (duration.TotalSeconds * 0.0));
 	}
 }
