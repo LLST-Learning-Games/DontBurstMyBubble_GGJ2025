@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdbd53779acfff04c93c8a1b7ba0585a
+guid: 9e04349b52e754cf391faf414c3bdc3b
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -120,6 +120,45 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -127,20 +166,20 @@ TextureImporter:
       name: magic_bubble_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 6
-        width: 41
-        height: 36
+        x: 0
+        y: 0
+        width: 47
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65e7555fb1f32e490800000000000000
-      internalID: -7718537422046921130
+      spriteID: 1a31f955e8e92475b953e380135ece8f
+      internalID: 1767251741
       vertices: []
       indices: 
       edges: []
@@ -149,20 +188,20 @@ TextureImporter:
       name: magic_bubble_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 8
-        width: 41
-        height: 32
+        x: 47
+        y: 0
+        width: 47
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d05f8e4c0a3ce0970800000000000000
-      internalID: 8723124623529014541
+      spriteID: 015485239d3d94ecfa667dd7e812b230
+      internalID: 1157038364
       vertices: []
       indices: 
       edges: []
@@ -171,20 +210,20 @@ TextureImporter:
       name: magic_bubble_2
       rect:
         serializedVersion: 2
-        x: 103
-        y: 13
-        width: 27
-        height: 26
+        x: 94
+        y: 0
+        width: 47
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 89e1e88edc496c740800000000000000
-      internalID: 5171984834172427928
+      spriteID: 4f23fe3f8c1d74f7b9ec542c290e9fff
+      internalID: 1328917993
       vertices: []
       indices: 
       edges: []
@@ -193,20 +232,20 @@ TextureImporter:
       name: magic_bubble_3
       rect:
         serializedVersion: 2
-        x: 108
-        y: 18
-        width: 7
-        height: 6
+        x: 141
+        y: 0
+        width: 47
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3b97fe36168c99b30800000000000000
-      internalID: 4294684040288500147
+      spriteID: c0e96d03f0d7e4c1c95a4aea583255ed
+      internalID: 1483272554
       vertices: []
       indices: 
       edges: []
@@ -215,20 +254,20 @@ TextureImporter:
       name: magic_bubble_4
       rect:
         serializedVersion: 2
-        x: 118
-        y: 24
-        width: 6
-        height: 6
+        x: 188
+        y: 0
+        width: 47
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a4b59409ba65f67d0800000000000000
-      internalID: -2923022338280039606
+      spriteID: 4f2103d6b6e47447b9533423152b528b
+      internalID: 1341544617
       vertices: []
       indices: 
       edges: []
@@ -237,86 +276,20 @@ TextureImporter:
       name: magic_bubble_5
       rect:
         serializedVersion: 2
-        x: 143
-        y: 18
-        width: 29
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41faa5787873395a0800000000000000
-      internalID: -6515803180643995884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: magic_bubble_6
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 7
-        width: 21
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9209fe26ac282d8d0800000000000000
-      internalID: -2823050210653007831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: magic_bubble_7
-      rect:
-        serializedVersion: 2
-        x: 159
+        x: 235
         y: 0
-        width: 119
-        height: 42
+        width: 47
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8d0c7e4cb1cac0d30800000000000000
-      internalID: 4399080171301748952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: magic_bubble_8
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 12
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 468a07b903c5f3890800000000000000
-      internalID: -7476155492575696796
+      spriteID: a8ca38618059b420eba1bc0bd418615b
+      internalID: 111021121
       vertices: []
       indices: 
       edges: []
@@ -325,7 +298,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bad15fbc510aa4897b0de498a9817db0
     internalID: 0
     vertices: []
     indices: 
@@ -334,7 +307,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      magic_bubble_0: 1767251741
+      magic_bubble_1: 1157038364
+      magic_bubble_2: 1328917993
+      magic_bubble_3: 1483272554
+      magic_bubble_4: 1341544617
+      magic_bubble_5: 111021121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
