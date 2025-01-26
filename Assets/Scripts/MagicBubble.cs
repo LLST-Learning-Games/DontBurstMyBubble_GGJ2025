@@ -6,6 +6,7 @@ public class MagicBubble : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private float _popDuration;
+    [SerializeField] private float _addTimeOnCollect = 10;
     
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -13,6 +14,7 @@ public class MagicBubble : MonoBehaviour
             return;
 
         PlayerState.Current.Lives++;
+        EventManager.Instance.AddTime.Invoke(_addTimeOnCollect);
         GetComponent<Collider2D>().enabled = false;
         StartCoroutine(Pop());
     }
