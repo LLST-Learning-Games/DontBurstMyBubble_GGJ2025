@@ -760,10 +760,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5965011291315363533, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
-      propertyPath: gasDensity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6726828783087033393, guid: b5e67050e40d6414fbe79995975cd72a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

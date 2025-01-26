@@ -47,7 +47,7 @@ MonoBehaviour:
   buoyancySimulationMethod: 0
   physicsBaseRadius: 0.05
   fluidDensity: 1100
-  gasDensity: 0.9
+  gasDensity: 1
   wakeInfluence: 0.2
   swarmFactor: 0.1
   riseSpeedFactor: 1
@@ -59,4 +59,4 @@ MonoBehaviour:
   <DistanceFactor>k__BackingField: 1
   <ClusterGravityDelta>k__BackingField: -0.01
   <DestroyAfterTime>k__BackingField: 30
-  <UseDestroyAfterTime>k__BackingField: 1
+  <UseDestroyAfterTime>k__BackingField: 0

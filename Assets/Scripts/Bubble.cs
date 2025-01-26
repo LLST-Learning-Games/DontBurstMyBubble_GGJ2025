@@ -26,6 +26,19 @@ public class Bubble : MonoBehaviour
 
     public float NormalizedVolume => (transform.localScale.x - _scaleBounds.x) / (_scaleBounds.y - _scaleBounds.x);
 
+    private void Start()
+    {
+        if (BubblesManager.Instance.UseDestroyAfterTime)
+        {
+            StartCoroutine(DestroyAfterTimeCoroutine());
+        }
+    }
+
+    private IEnumerator DestroyAfterTimeCoroutine()
+    {
+        yield return new WaitForSeconds(BubblesManager.Instance.DestroyAfterTime);
+        yield return StartCoroutine(PopBubbleCoroutine());
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
