@@ -10,6 +10,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] private float _popTime = 0.1f;
     [SerializeField] private bool attractedToOtherBubbles = true;
     [SerializeField] private Player _player;
+    [SerializeField] private Animator _animator;
 
     private bool _isPlayer => _player;
     
@@ -24,24 +25,7 @@ public class Bubble : MonoBehaviour
     private bool _isPopped = false;
 
     public float NormalizedVolume => (transform.localScale.x - _scaleBounds.x) / (_scaleBounds.y - _scaleBounds.x);
-    
-    private void Start()
-    {
-        if (!_isPlayer && BubblesManager.Instance && BubblesManager.Instance.UseDestroyAfterTime)
-        {
-            StartCoroutine(DestroyAfterSeconds());
-        }
 
-        if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
-            _rigidbody.gravityScale = CalculateGravityScale(gameObject.transform.lossyScale.magnitude);
-    }
-
-    // Temporary cleanup operation while we play with spawning
-    private IEnumerator DestroyAfterSeconds()
-    {
-        yield return new WaitForSeconds(BubblesManager.Instance.DestroyAfterTime);
-        yield return PopBubbleCoroutine();
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -55,20 +39,7 @@ public class Bubble : MonoBehaviour
         if (otherBubble)
         {
             _otherBubbles.Add(otherBubble);
-            if (_rigidbody)
-            {
-                if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
-                    _rigidbody.gravityScale += GetGravityDelta();
-            }
         }
-    }
-    
-    private float GetGravityDelta()
-    {
-        if (BubblesManager.Instance)
-            return BubblesManager.Instance.ClusterGravityDelta;
-        else
-            return -0.05f;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -79,11 +50,6 @@ public class Bubble : MonoBehaviour
         }
         
         _otherBubbles.Remove(other.GetComponent<Bubble>());
-        if(_rigidbody)
-        {
-            if (BubblesManager.Instance && BubblesManager.Instance.UseGravityScaling)
-                _rigidbody.gravityScale -= GetGravityDelta();
-        }
     }
 
     private void FixedUpdate()
@@ -154,14 +120,15 @@ public class Bubble : MonoBehaviour
     {
         // todo - trigger cute pop animation or something
         _otherBubbles.Clear();
-        float time = 0f;
-        Color originalColor = _spriteRenderer.color;
-        while (time < _popTime)
-        {
-            time += Time.deltaTime;
-            _spriteRenderer.color = Color.Lerp(originalColor, Color.clear, time / _popTime);
-            yield return null;
-        }
+        _animator.SetTrigger("OnPop");
+        Collider.enabled = false;
+        
+        // _animator.Update(0);
+        // var clips = _animator.GetCurrentAnimatorClipInfo(0);
+        // int delayTime = (int)(clips[0].clip.length * 1000);
+        //yield return new WaitForSeconds(delayTime);
+        
+        yield return new WaitForSeconds(_popTime);
         Destroy(gameObject);
     }
 
@@ -172,13 +139,9 @@ public class Bubble : MonoBehaviour
         gameObject.transform.localScale = new Vector3(newScale, newScale, 1f);
         
         float scaleSign = Mathf.Sign(gameObject.transform.lossyScale.x);
-        float preservedScaleMagnitude = gameObject.transform.lossyScale.magnitude * scaleSign;
 
         if (BubblesManager.Instance)
         {
-            if (BubblesManager.Instance.UseGravityScaling)
-                _rigidbody.gravityScale = CalculateGravityScale(preservedScaleMagnitude);
-
             if (BubblesManager.Instance.UseBuoyancy)
             {
                 _buoyancy ??= GetComponent<BubbleBuoyancy>();
@@ -187,21 +150,5 @@ public class Bubble : MonoBehaviour
         }
 
         _spriteRenderer.gameObject.SetActive(scaleSign > 0);
-    }
-
-    private float CalculateGravityScale(float sizeScale)
-    {
-        return GetGravityDelta() * DiameterToVolume(sizeScale) + GetGravityEffectOfOtherBubbles();
-    }
-        
-    
-    float DiameterToVolume(float diameter)
-    {
-        return (float)(Math.PI * Math.Pow(diameter, 3) / 6);
-    }
-
-    float GetGravityEffectOfOtherBubbles()
-    {
-        return GetGravityDelta() * _otherBubbles.Count;
     }
 }
