@@ -5,6 +5,9 @@ public class DeathCollider : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.isTrigger)
+            return;
+        
         Player player = other.GetComponent<Player>();
         
         if (!player)
@@ -13,8 +16,7 @@ public class DeathCollider : MonoBehaviour
             return;
         }
 
-        if (other.isTrigger)
-            return;
+
         
         player.Kill();
     }
