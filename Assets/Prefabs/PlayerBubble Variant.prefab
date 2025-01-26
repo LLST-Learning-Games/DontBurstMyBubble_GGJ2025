@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
       propertyPath: moveSpeed
-      value: 80
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 9043466758002542190, guid: 00d0d01e0b4f08c408dbd6c58b8e5773, type: 3}
       propertyPath: boostForce
@@ -598,7 +598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2439172162456581026, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 2439172162456581026, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_Constraints
