@@ -571,6 +571,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 3881789744283377949}
     m_Modifications:
     - target: {fileID: 3166868824010347158, guid: 08fc4a242b55cc24e94e9a6271dcaf80, type: 3}
+      propertyPath: maxBubbles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166868824010347158, guid: 08fc4a242b55cc24e94e9a6271dcaf80, type: 3}
+      propertyPath: bubblePrefab
+      value: 
+      objectReference: {fileID: 8612469172512656841, guid: 14d8a3e58b5b84d4fbb7cb187aefee20, type: 3}
+    - target: {fileID: 3166868824010347158, guid: 08fc4a242b55cc24e94e9a6271dcaf80, type: 3}
       propertyPath: minMaxWaitTime.x
       value: 1
       objectReference: {fileID: 0}

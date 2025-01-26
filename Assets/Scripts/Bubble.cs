@@ -11,6 +11,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] private bool attractedToOtherBubbles = true;
     [SerializeField] private Player _player;
     [SerializeField] private Animator _animator;
+    [SerializeField] private float destroyAfterTime = 0f;
 
     private bool _isPlayer => _player;
 
@@ -30,7 +31,7 @@ public class Bubble : MonoBehaviour
 
     private void Start()
     {
-        if (BubblesManager.Instance.UseDestroyAfterTime)
+        if (BubblesManager.Instance.UseDestroyAfterTime || destroyAfterTime > 0f)
         {
             StartCoroutine(DestroyAfterTimeCoroutine());
         }
@@ -38,7 +39,8 @@ public class Bubble : MonoBehaviour
 
     private IEnumerator DestroyAfterTimeCoroutine()
     {
-        yield return new WaitForSeconds(BubblesManager.Instance.DestroyAfterTime);
+        var useMyValue = destroyAfterTime > 0f ? destroyAfterTime : BubblesManager.Instance.DestroyAfterTime;
+        yield return new WaitForSeconds(useMyValue);//BubblesManager.Instance.DestroyAfterTime);
         yield return StartCoroutine(PopBubbleCoroutine());
     }
 
