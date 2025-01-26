@@ -37,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FogDensity: 0.2
-    - _FogIntensity: 0.2
+    - _FogDensity: 0.1
+    - _FogIntensity: 0.03
     - _FogScale: 50
     m_Colors:
-    - _FogColor: {r: 0, g: 0.3490566, b: 0, a: 1}
+    - _FogColor: {r: 0.71915436, g: 0, b: 0.673972, a: 1}
     - _FogSpeed: {r: 0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
