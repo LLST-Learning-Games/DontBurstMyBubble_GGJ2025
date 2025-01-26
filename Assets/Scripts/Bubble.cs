@@ -10,6 +10,7 @@ public class Bubble : MonoBehaviour
     [SerializeField] private float _popTime = 0.1f;
     [SerializeField] private bool attractedToOtherBubbles = true;
     [SerializeField] private Player _player;
+    [SerializeField] private Animator _animator;
 
     private bool _isPlayer => _player;
     
@@ -154,14 +155,15 @@ public class Bubble : MonoBehaviour
     {
         // todo - trigger cute pop animation or something
         _otherBubbles.Clear();
-        float time = 0f;
-        Color originalColor = _spriteRenderer.color;
-        while (time < _popTime)
-        {
-            time += Time.deltaTime;
-            _spriteRenderer.color = Color.Lerp(originalColor, Color.clear, time / _popTime);
-            yield return null;
-        }
+        _animator.SetTrigger("OnPop");
+        Collider.enabled = false;
+        
+        // _animator.Update(0);
+        // var clips = _animator.GetCurrentAnimatorClipInfo(0);
+        // int delayTime = (int)(clips[0].clip.length * 1000);
+        //yield return new WaitForSeconds(delayTime);
+        
+        yield return new WaitForSeconds(_popTime);
         Destroy(gameObject);
     }
 

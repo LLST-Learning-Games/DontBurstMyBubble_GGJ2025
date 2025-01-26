@@ -1,10 +1,43 @@
 fileFormatVersion: 2
-guid: 900d7ac5fc7896e4a9d2d0d5a189907c
+guid: 95899e7c0e9e87441a839da301bc2611
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9136834448258697486
-    second: bubble_0
+      213: -4304946413487515216
+    second: whooooosh_0
+  - first:
+      213: -7845714775622827725
+    second: whooooosh_1
+  - first:
+      213: -3968070418236145443
+    second: whooooosh_2
+  - first:
+      213: -5777477001227857326
+    second: whooooosh_3
+  - first:
+      213: 8973751540751978173
+    second: whooooosh_4
+  - first:
+      213: 1596810735754705639
+    second: whooooosh_5
+  - first:
+      213: 2170640425740467201
+    second: whooooosh_6
+  - first:
+      213: 6521867834204899337
+    second: whooooosh_7
+  - first:
+      213: 6520400411674104126
+    second: whooooosh_8
+  - first:
+      213: 6753780438758715113
+    second: whooooosh_9
+  - first:
+      213: 8873735869641456615
+    second: whooooosh_10
+  - first:
+      213: -1974069382218296165
+    second: whooooosh_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,52 +129,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bubble_0
+      name: whooooosh_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2f6fcf37a71733180800000000000000
-      internalID: -9136834448258697486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubble_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 48
+        width: 192
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,64 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cea8b412a1a5534478c2d16244960d64
-      internalID: -1856352815
+      spriteID: 35a917eedb0862741b9fb4650ddc5d00
+      internalID: 682246855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8a48d8ac30e4d540824bd3a10064ca1
-      internalID: 685565142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubble_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04405d9c4ad03d14dbb7d7a78502f767
-      internalID: 864798669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bubble_4
+      name: whooooosh_1
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 48
-        height: 48
+        width: 192
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +170,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 016291cd2384dc84395481e52a74b341
-      internalID: -1310621193
+      spriteID: 767dfc7d93cb3fd448efcb6e86bf0110
+      internalID: -574117650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whooooosh_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8adc563ee4c6d4d8ef52182beb0ab7
+      internalID: -1976665189
       vertices: []
       indices: 
       edges: []
@@ -226,7 +202,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: eadc21fb184c45f4190ac04f5bd18455
     internalID: 0
     vertices: []
     indices: 
@@ -236,11 +212,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bubble_0: -9136834448258697486
-      bubble_1: -1856352815
-      bubble_2: 685565142
-      bubble_3: 864798669
-      bubble_4: -1310621193
+      whooooosh_0: 682246855
+      whooooosh_1: -574117650
+      whooooosh_2: -1976665189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7332219301000997161}
   - component: {fileID: 2439172162456581026}
   - component: {fileID: 1032627565988397796}
+  - component: {fileID: 2138938289798944346}
   m_Layer: 6
   m_Name: Bubble
   m_TagString: Bubble
@@ -52,9 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 5217711319184765185}
   _rigidbody: {fileID: 2439172162456581026}
-  _popTime: 0.3
+  _popTime: 0.5
   attractedToOtherBubbles: 1
   _player: {fileID: 0}
+  _animator: {fileID: 2138938289798944346}
   _scaleBounds: {x: 0.1, y: 3}
   <Collider>k__BackingField: {fileID: 1032627565988397796}
 --- !u!114 &8473944811868153143
@@ -174,6 +176,28 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!95 &2138938289798944346
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795216414922481971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b832b50c365c47e4283062508c63ea99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4209964395061156675
 GameObject:
   m_ObjectHideFlags: 0
