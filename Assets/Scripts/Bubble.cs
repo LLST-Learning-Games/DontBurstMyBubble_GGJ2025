@@ -13,6 +13,8 @@ public class Bubble : MonoBehaviour
     [SerializeField] private Animator _animator;
 
     private bool _isPlayer => _player;
+
+    public IReadOnlyList<Bubble> AttachedBubbles => _otherBubbles;
     
     // todo - these are currently only used for the player bubble. may want to bust these out into a derived class or component.
     [SerializeField] private Vector2 _scaleBounds = new Vector2(0.1f, 3f);
