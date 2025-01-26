@@ -173,18 +173,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 266214542074253049, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 266214542074253049, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 266214542074253049, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1237936601
-      objectReference: {fileID: 0}
     - target: {fileID: 4670775312209436363, guid: 4ae77d00ab67c9b4e860d5b5408f91e2, type: 3}
       propertyPath: m_Name
       value: PlayerBubble Variant
