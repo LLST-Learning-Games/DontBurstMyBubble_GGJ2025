@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 7638507747500428378}
-  speedMultiplier: 0.2
+  speedMultiplier: 0.1
   minRadius: 2
   maxRadius: 20
   originalRadius: 0
