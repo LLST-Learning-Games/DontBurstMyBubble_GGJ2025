@@ -162,14 +162,6 @@ PrefabInstance:
       value: Bubble
       objectReference: {fileID: 0}
     - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107236202288969407, guid: 808bca8850b32214b9e2bacd8e3837d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
