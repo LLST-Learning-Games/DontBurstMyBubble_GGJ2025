@@ -11,6 +11,7 @@ public class PlayerCheckpointController : MonoBehaviour
 	{
 		FindStartPoints();
 		MoveToStartPoint();
+		Time.timeScale = 1.0f;
 	}
 	
 	#if UNITY_EDITOR
