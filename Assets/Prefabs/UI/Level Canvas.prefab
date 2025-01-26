@@ -878,8 +878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 465.81476, y: -906.15985}
-  m_SizeDelta: {x: 931.6295, y: 50}
+  m_AnchoredPosition: {x: 950, y: -906.15985}
+  m_SizeDelta: {x: 1900, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8179716790591146031
 CanvasRenderer:
@@ -911,10 +911,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Drop Off Zone #1
 
-    <color=green>00:00 remaining'
+    <color=green>12:34 remaining'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4068742a326d1e64fb91139b2234cce0, type: 2}
-  m_sharedMaterial: {fileID: -3332131797660970418, guid: 4068742a326d1e64fb91139b2234cce0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fcf0f017b8f1fd14e9c202f3459a9dc1, type: 2}
+  m_sharedMaterial: {fileID: -4995475869384538272, guid: fcf0f017b8f1fd14e9c202f3459a9dc1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -938,8 +938,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
