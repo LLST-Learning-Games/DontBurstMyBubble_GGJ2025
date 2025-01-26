@@ -7,6 +7,7 @@ public class LevelSelectButton : MonoBehaviour
 
     public void LoadLevel()
     {
+        PlayerState.Current = new();
         SceneManager.LoadScene(SceneName);
     }
 }
