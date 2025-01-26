@@ -5,11 +5,10 @@ public class MagicBubble : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!other.gameObject.GetComponent<Player>())
+        if (!PhysicsUtility.IsPlayerOrAttachedTo(other.gameObject))
             return;
 
         PlayerState.Current.Lives++;
         Destroy(gameObject);
-        //TODO: visibly parent the bubble to the player
     }
 }
