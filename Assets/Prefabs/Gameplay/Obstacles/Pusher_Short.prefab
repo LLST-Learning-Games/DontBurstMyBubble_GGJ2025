@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pushMagnitude: 10
-  _targetSpeed: 30
+  _targetSpeed: 25
 --- !u!1 &6476169054446640981
 GameObject:
   m_ObjectHideFlags: 0
