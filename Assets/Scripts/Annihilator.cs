@@ -5,26 +5,54 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Annihilator : MonoBehaviour
 {
     [SerializeField] private TextMeshPro statusText;
+    [SerializeField] private TextMeshPro timeText;
     [SerializeField] private int max = 10;
+    [SerializeField] private float timeLimit = 60;
     [SerializeField] private bool addtoScoreOnAnnihilate = false;
     [SerializeField] private float shrinkTime = 1f;
-    [Header("Monitoring")]
+
+    [FormerlySerializedAs("acceptingBubbles")] [Header("Monitoring")] [SerializeField]
+    private bool _acceptingBubbles = true;
     [SerializeField] List<GameObject> shrinkingObjects = new List<GameObject>();
 
     [SerializeField] private int count;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (timeLimit != 0)
+        {
+            StartCoroutine(TimerCoroutine());
+        }
+    }
+
+    IEnumerator TimerCoroutine()
+    {
+        var timeRemaining = timeLimit;
+        while (timeRemaining > 0)
+        {
+            timeText.text = Mathf.RoundToInt(timeRemaining).ToString(); // Update the UI text
+            timeRemaining -= 1f; // Decrease time by 1 second
+            yield return new WaitForSeconds(1f); // Wait for 1 second
+        }
+
+        timeText.text = "LOCKED"; 
+        StopAcceptingBubbles();
+    }
+
+    void StopAcceptingBubbles()
+    {
+        _acceptingBubbles = false;
+        StopAllCoroutines();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (count >= max)
+        if (!_acceptingBubbles)//count >= max)
             return;
         
         if (other.isTrigger)
@@ -74,7 +102,8 @@ public class Annihilator : MonoBehaviour
 
         if (count >= max)
         {
-            StopAllCoroutines();
+            //StopAllCoroutines();
+            StopAcceptingBubbles();
             statusText.text = "FULL";
         }
     }
