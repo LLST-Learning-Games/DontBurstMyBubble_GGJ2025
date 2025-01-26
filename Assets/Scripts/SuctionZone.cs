@@ -12,6 +12,12 @@ public class SuctionZone : MonoBehaviour
     {
         if (other.isTrigger || !other.CompareTag("Bubble")) // we don't want to run on trigger zones.
             return;
+
+        if (other.GetComponent<Player>() != null)
+            return;
+        //
+        // if (PhysicsUtility.IsPlayerOrAttachedTo(other.gameObject))
+        //     return;
         
         Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
         if (rb == null) return; // Only affect objects with Rigidbody2D
