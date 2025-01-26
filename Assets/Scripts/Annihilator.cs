@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Annihilator : MonoBehaviour
 {
+    [SerializeField] private bool addtoScoreOnAnnihilate = false;
     [SerializeField] private float shrinkTime = 1f;
     [Header("Monitoring")]
     [SerializeField] List<GameObject> shrinkingObjects = new List<GameObject>();
@@ -23,6 +25,11 @@ public class Annihilator : MonoBehaviour
         
         if (shrinkingObjects.Contains(other.gameObject))
             return;
+
+        if (other.GetComponent<Player>() != null)
+            return;
+        // if (PhysicsUtility.IsPlayerOrAttachedTo(other.gameObject))
+        //     return;
         
         shrinkingObjects.Add(other.gameObject);
         StartCoroutine(Shrink(other.gameObject, shrinkTime));
@@ -48,5 +55,8 @@ public class Annihilator : MonoBehaviour
         transform.localScale = endScale; // Ensure exact target scale
         shrinkingObjects.Remove(obj);
         Destroy(obj);    
+        
+        if (addtoScoreOnAnnihilate)
+            PlayerState.Current.Score += WinCollider.pointsPerBubble;
     }
 }
