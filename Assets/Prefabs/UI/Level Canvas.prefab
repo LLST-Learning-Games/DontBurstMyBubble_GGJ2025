@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: {fileID: 7479969773195008367}
+  ShowCalcualtion: 0
 --- !u!1 &2316756894554975672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,6 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: {fileID: 3265087874397528605}
+  ShowCalcualtion: 0
 --- !u!1 &4708988479490921906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,7 +1350,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score
+  m_text: 'Score: 00,000
+
+    <size=80%>(0 Bubbles x 100)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fcf0f017b8f1fd14e9c202f3459a9dc1, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 698589a4ffa5a41bf828a18e307ece28, type: 2}
@@ -1432,6 +1436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: {fileID: 1255651777280672144}
+  ShowCalcualtion: 1
 --- !u!1 &5094866281754340333
 GameObject:
   m_ObjectHideFlags: 0
