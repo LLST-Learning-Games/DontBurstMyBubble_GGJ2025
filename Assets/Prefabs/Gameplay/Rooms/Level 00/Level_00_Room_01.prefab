@@ -2376,10 +2376,7 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Spikes will pop your
 
-        collected bubbles,
-
-        and <color=red>kill</color>
-        you'
+        collected bubbles'
       objectReference: {fileID: 0}
     - target: {fileID: 7592281134438153063, guid: a0e62ed6dba6d44c2bf137f596b87425, type: 3}
       propertyPath: m_margin.y
