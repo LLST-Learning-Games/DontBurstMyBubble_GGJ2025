@@ -1104,7 +1104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1065467088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1823,7 +1823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Untitled Bubble Game
+  m_text: Until the last breath
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4c7169a659a8dd44b90747c15d48d6a5, type: 2}
   m_sharedMaterial: {fileID: 8817019855343692285, guid: 4c7169a659a8dd44b90747c15d48d6a5, type: 2}
