@@ -71,8 +71,11 @@ public class Annihilator : MonoBehaviour
     {
         count++;
         statusText.text = count.ToString();
-        
+
         if (count >= max)
+        {
+            StopAllCoroutines();
             statusText.text = "FULL";
+        }
     }
 }
