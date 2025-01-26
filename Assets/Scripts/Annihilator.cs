@@ -15,17 +15,23 @@ public class Annihilator : MonoBehaviour
     [SerializeField] private float timeLimit = 60;
     [SerializeField] private bool addtoScoreOnAnnihilate = false;
     [SerializeField] private float shrinkTime = 1f;
+    public int Index;
 
     [FormerlySerializedAs("acceptingBubbles")] [Header("Monitoring")] [SerializeField]
     private bool _acceptingBubbles = true;
     [SerializeField] List<GameObject> shrinkingObjects = new List<GameObject>();
 
     [SerializeField] private int count;
+
+    public bool IsFull => count >= max;
+    public TimeSpan TimeRemaining { get; private set; }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (timeLimit != 0)
         {
+            TimeRemaining = TimeSpan.FromSeconds(timeLimit);
             StartCoroutine(TimerCoroutine());
         }
     }
@@ -37,6 +43,7 @@ public class Annihilator : MonoBehaviour
         {
             timeText.text = Mathf.RoundToInt(timeRemaining).ToString(); // Update the UI text
             timeRemaining -= 1f; // Decrease time by 1 second
+            TimeRemaining = TimeSpan.FromSeconds(timeRemaining);
             yield return new WaitForSeconds(1f); // Wait for 1 second
         }
 

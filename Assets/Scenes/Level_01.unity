@@ -610,14 +610,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1438195946993792069, guid: e1fa5f73918c04a36ac7037b9e672136, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2424461993546463212, guid: e1fa5f73918c04a36ac7037b9e672136, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5596073625121967030, guid: e1fa5f73918c04a36ac7037b9e672136, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1289,6 +1281,14 @@ PrefabInstance:
     - target: {fileID: 2382683455384051352, guid: c60f194af95004358a045a1374055c45, type: 3}
       propertyPath: m_Name
       value: Level_01_Room_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508334121606170741, guid: c60f194af95004358a045a1374055c45, type: 3}
+      propertyPath: Index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593021421336431113, guid: c60f194af95004358a045a1374055c45, type: 3}
+      propertyPath: Index
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8052123972466450938, guid: c60f194af95004358a045a1374055c45, type: 3}
       propertyPath: m_LocalPosition.x
