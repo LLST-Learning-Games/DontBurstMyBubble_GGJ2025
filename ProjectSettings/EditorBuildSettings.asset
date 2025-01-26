@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 994dac50cf6844fb693cdb355537f0ab
   - enabled: 1
-    path: Assets/Scenes/BubblePlayer.unity
+    path: Assets/Scenes/TestScenes/BubblePlayer.unity
     guid: 1d4d307c5c9595840897787a6c5d737d
   - enabled: 1
-    path: Assets/Scenes/BubblePlaying.unity
+    path: Assets/Scenes/TestScenes/BubblePlaying.unity
     guid: 7fa70578daa255440b7ab45ce56448a9
   - enabled: 1
     path: Assets/Scenes/Level_01.unity
